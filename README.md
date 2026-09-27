@@ -1,0 +1,1 @@
+# niminfo-for-ai-models-so-they-can-get-all-they-need-in-one-place
