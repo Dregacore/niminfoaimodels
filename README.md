@@ -1,5 +1,5 @@
+FUll nim documentation and tutorials alongside thirdparty packages list=
 
-# niminfo-for-ai-models-so-they-can-get-all-they-need-in-one-place
 
 Learn X in Y minutes
 Where X=Nim
@@ -2039,6 +2039,8 @@ Happy coding!
  
 
 The source files are available on Github.
+
+
 
 
 Nim Tutorial (Part I)
@@ -4174,314 +4176,6 @@ OpenGL Sandbox
 
 
 Made with Nim. Generated: 2026-09-08 04:34:49 UTC
-
-
-Nim Standard Library
-Theme: 
-
-    Manual
-    Standard library
-    Index
-    Compiler docs
-    Fusion docs
-    devel, stable
-
-Search:
-Group by:
-
-    Nimble
-    Pure libraries
-        Automatic imports
-        Core
-        Algorithms
-        Collections
-        String handling
-        Time handling
-        Generic Operating System Services
-        Math libraries
-        Internet Protocols and Support
-        Threading
-        Parsers
-        Docutils
-        XML Processing
-        Generators
-        Hashing
-        Serialization
-        Miscellaneous
-        Modules for the JavaScript backend
-    Impure libraries
-        Regular expressions
-        Database support
-        Generic Operating System Services
-    Wrappers
-        Windows-specific
-        UNIX specific
-        Regular expressions
-        Database support
-        Network Programming and Internet Protocols
-
-Source   Edit  
-
-Author:	Andreas Rumpf
-Version:	2.2.12
-
-Nim's library is divided into pure libraries, impure libraries, and wrappers.
-
-Pure libraries do not depend on any external *.dll or lib*.so binary while impure libraries do. A wrapper is an impure library that is a very low-level interface to a C library.
-
-Read this document for a quick overview of the API design.
-Nimble
-
-Nim's standard library only covers the basics, check out https://nimble.directory/ for a list of 3rd party packages.
-Pure libraries
-Automatic imports
-
-    system Basic procs and operators that every program needs. It also provides IO facilities for reading and writing text and binary files. It is imported implicitly by the compiler. Do not import it directly. It relies on compiler magic to work.
-
-Core
-
-    atomics Types and operations for atomic operations and lockless algorithms.
-    bitops Provides a series of low-level methods for bit manipulation.
-    compilesettings Querying the compiler about diverse configuration settings from code.
-    cpuinfo Procs to determine the number of CPUs / cores.
-    effecttraits Access to the inferred .raises effects for Nim's macro system.
-    endians Helpers that deal with different byte orders.
-    locks Locks and condition variables for Nim.
-    macrocache Provides an API for macros to collect compile-time information across modules.
-    macros Contains the AST API and documentation of Nim for writing macros.
-    rlocks Reentrant locks for Nim.
-    typeinfo Provides (unsafe) access to Nim's run-time type information.
-    typetraits Compile-time reflection procs for working with types.
-    volatile Code for generating volatile loads and stores, which are useful in embedded and systems programming.
-
-Algorithms
-
-    algorithm Some common generic algorithms like sort or binary search.
-    enumutils Additional functionality for the built-in enum type.
-    sequtils Operations for the built-in seq type which were inspired by functional programming languages.
-    setutils Additional functionality for the built-in set type.
-
-Collections
-
-    critbits A crit bit tree which is an efficient container for a sorted set of strings, or a sorted mapping of strings.
-    deques Implementation of a double-ended queue. The underlying implementation uses a seq.
-    heapqueue Implementation of a binary heap data structure that can be used as a priority queue.
-    intsets Efficient implementation of a set of ints as a sparse bit set.
-    lists Nim linked list support. Contains singly and doubly linked lists and circular lists ("rings").
-    options The option type encapsulates an optional value.
-    packedsets Efficient implementation of a set of ordinals as a sparse bit set.
-    ropes A rope data type. Ropes can represent very long strings efficiently; in particular, concatenation is done in O(1) instead of O(n).
-    sets Nim hash set support.
-    strtabs The strtabs module implements an efficient hash table that is a mapping from strings to strings. Supports a case-sensitive, case-insensitive and style-insensitive modes.
-    tables Nim hash table support. Contains tables, ordered tables, and count tables.
-
-String handling
-
-    cstrutils Utilities for cstring handling.
-    editdistance An algorithm to compute the edit distance between two Unicode strings.
-    encodings Converts between different character encodings. On UNIX, this uses the iconv library, on Windows the Windows API.
-    formatfloat Formatting floats as strings.
-    objectdollar A generic $ operator to convert objects to strings.
-    punycode Implements a representation of Unicode with the limited ASCII character subset.
-    strbasics Some high performance string operations.
-    strformat Macro based standard string interpolation/formatting. Inspired by Python's f-strings. Note: if you need templating, consider using Nim Source Code Filters (SCF).
-    strmisc Uncommon string handling operations that do not fit with the commonly used operations in strutils.
-    strscans A scanf macro for convenient parsing of mini languages.
-    strutils Common string handling operations like changing case of a string, splitting a string into substrings, searching for substrings, replacing substrings.
-    unicode Support for handling the Unicode UTF-8 encoding.
-    unidecode It provides a single proc that does Unicode to ASCII transliterations. Based on Python's Unidecode module.
-    widestrs Nim support for C/C++'s wide strings.
-    wordwrap An algorithm for word-wrapping Unicode strings.
-
-Time handling
-
-    monotimes The monotimes module implements monotonic timestamps.
-    times The times module contains support for working with time.
-
-Generic Operating System Services
-
-    appdirs Helpers for determining special directories used by apps.
-    cmdline System facilities for reading command line parameters.
-    dirs Directory handling.
-    distros Basics for OS distribution ("distro") detection and the OS's native package manager. Its primary purpose is to produce output for Nimble packages, but it also contains the widely used Distribution enum that is useful for writing platform-specific code. See packaging for hints on distributing Nim using OS packages.
-    dynlib Accessing symbols from shared libraries.
-    envvars Environment variable handling.
-    exitprocs Adding hooks to program exit.
-    files File handling.
-    memfiles Support for memory-mapped files (Posix's mmap) on the different operating systems.
-    os Basic operating system facilities like retrieving environment variables, reading command line arguments, working with directories, running shell commands, etc.
-    oserrors OS error reporting.
-    osproc Module for process communication beyond os.execShellCmd.
-    paths Path handling.
-    reservedmem Utilities for reserving portions of the address space of a program without consuming physical memory.
-    streams A stream interface and two implementations thereof: the FileStream and the StringStream which implement the stream interface for Nim file objects (File) and strings. Other modules may provide other implementations for this standard stream interface.
-    symlinks Symlink handling.
-    syncio Various synchronized I/O operations.
-    terminal A module to control the terminal output (also called console).
-    tempfiles Some utilities for generating temporary path names and creating temporary files and directories.
-
-Math libraries
-
-    complex Complex numbers and relevant mathematical operations.
-    fenv Floating-point environment. Handling of floating-point rounding and exceptions (overflow, zero-divide, etc.).
-    lenientops Binary operators for mixed integer/float expressions for convenience.
-    math Mathematical operations like cosine, square root.
-    random Fast and tiny random number generator.
-    rationals Rational numbers and relevant mathematical operations.
-    stats Statistical analysis.
-    sysrand Cryptographically secure pseudorandom number generator.
-
-Internet Protocols and Support
-
-    async Exports asyncmacro and asyncfutures for native backends, and asyncjs on the JS backend.
-    asyncdispatch An asynchronous dispatcher for IO operations.
-    asyncfile An asynchronous file reading and writing using asyncdispatch.
-    asyncftpclient An asynchronous FTP client using the asyncnet module.
-    asynchttpserver An asynchronous HTTP server using the asyncnet module.
-    asyncmacro async and multisync macros for asyncdispatch.
-    asyncnet Asynchronous sockets based on the asyncdispatch module.
-    asyncstreams FutureStream - a future that acts as a queue.
-    cgi Helpers for CGI applications.
-    cookies Helper procs for parsing and generating cookies.
-    httpclient A simple HTTP client with support for both synchronous and asynchronous retrieval of web pages.
-    mimetypes A mimetypes database.
-    nativesockets A low-level sockets API.
-    net A high-level sockets API.
-    selectors A selector API with backends specific to each OS. Supported OS primitives: epoll, kqueue, poll, and select on Windows.
-    smtp A simple SMTP client with support for both synchronous and asynchronous operation.
-    socketstreams An implementation of the streams interface for sockets.
-    uri Functions for working with URIs and URLs.
-
-Threading
-
-    isolation The Isolated[T] type for safe construction of isolated subgraphs that can be passed efficiently to different channels and threads.
-    tasks Basic primitives for creating parallel programs.
-    threadpool Implements Nim's spawn.
-    typedthreads Basic Nim thread support.
-
-Parsers
-
-    htmlparser HTML document parser that creates a XML tree representation.
-    json High-performance JSON parser.
-    lexbase A low-level module that implements an extremely efficient buffering scheme for lexers and parsers. This is used by the diverse parsing modules.
-    parsecfg The parsecfg module implements a high-performance configuration file parser. The configuration file's syntax is similar to the Windows .ini format, but much more powerful, as it is not a line based parser. String literals, raw string literals, and triple quote string literals are supported as in the Nim programming language.
-    parsecsv The parsecsv module implements a simple high-performance CSV parser.
-    parsejson A JSON parser. It is used and exported by the json module, but can also be used in its own right.
-    parseopt The parseopt module implements a command line option parser.
-    parsesql The parsesql module implements a simple high-performance SQL parser.
-    parseutils Helpers for parsing tokens, numbers, identifiers, etc.
-    parsexml The parsexml module implements a simple high performance XML/HTML parser. The only encoding that is supported is UTF-8. The parser has been designed to be somewhat error-correcting, so that even some "wild HTML" found on the web can be parsed with it.
-    pegs Procedures and operators for handling PEGs.
-
-Docutils
-
-    packages/docutils/highlite Source highlighter for programming or markup languages. Currently, only a few languages are supported, other languages may be added. The interface supports one language nested in another.
-    packages/docutils/rst A reStructuredText parser. A large subset is implemented. Some features of the markdown wiki syntax are also supported.
-    packages/docutils/rstast An AST for the reStructuredText parser.
-    packages/docutils/rstgen A generator of HTML/Latex from reStructuredText.
-
-XML Processing
-
-    xmltree A simple XML tree. More efficient and simpler than the DOM. It also contains a macro for XML/HTML code generation.
-    xmlparser XML document parser that creates a XML tree representation.
-
-Generators
-
-    genasts AST generation using captured variables for macros.
-    htmlgen A simple XML and HTML code generator. Each commonly used HTML tag has a corresponding macro that generates a string with its HTML representation.
-
-Hashing
-
-    base64 A Base64 encoder and decoder.
-    hashes Efficient computations of hash values for diverse Nim types.
-    md5 The MD5 checksum algorithm.
-    oids An OID is a global ID that consists of a timestamp, a unique counter, and a random value. This combination should suffice to produce a globally distributed unique ID.
-    sha1 The SHA-1 checksum algorithm.
-
-Serialization
-
-    jsonutils Hookable (de)serialization for arbitrary types using JSON.
-    marshal Contains procs for serialization and deserialization of arbitrary Nim data structures.
-
-Miscellaneous
-
-    assertions Assertion handling.
-    browsers Procs for opening URLs with the user's default browser.
-    colors Color handling.
-    coro Experimental coroutines in Nim.
-    decls Syntax sugar for some declarations.
-    enumerate enumerate syntactic sugar based on Nim's macro system.
-    importutils Utilities related to import and symbol resolution.
-    logging A simple logger.
-    segfaults Turns access violations or segfaults into a NilAccessDefect exception.
-    sugar Nice syntactic sugar based on Nim's macro system.
-    unittest Implements a Unit testing DSL.
-    varints Decode variable-length integers that are compatible with SQLite.
-    with The with macro for easy function chaining.
-    wrapnils Allows evaluating expressions safely against nil dereferences.
-
-Modules for the JavaScript backend
-
-    asyncjs Types and macros for writing asynchronous procedures in JavaScript.
-    dom Declaration of the Document Object Model for the JS backend.
-    jsbigints Arbitrary precision integers.
-    jsconsole Wrapper for the console object.
-    jscore The wrapper of core JavaScript functions. For most purposes, you should be using the math, json, and times stdlib modules instead of this module.
-    jsfetch Wrapper for fetch.
-    jsffi Types and macros for easier interaction with JavaScript.
-    jsre Regular Expressions for the JavaScript target.
-
-Impure libraries
-Regular expressions
-
-    re Procedures and operators for handling regular expressions. The current implementation uses PCRE.
-
-    nre
-
-    Many help functions for handling regular expressions. The current implementation uses PCRE.
-
-Database support
-
-    db_mysql A higher level MySQL database wrapper. The same interface is implemented for other databases too.
-    db_odbc A higher level ODBC database wrapper. The same interface is implemented for other databases too.
-    db_postgres A higher level PostgreSQL database wrapper. The same interface is implemented for other databases too.
-    db_sqlite A higher level SQLite database wrapper. The same interface is implemented for other databases too.
-
-Generic Operating System Services
-
-    rdstdin Code for reading user input from stdin.
-
-Wrappers
-
-The generated HTML for some of these wrappers is so huge that it is not contained in the distribution. You can then find them on the website.
-Windows-specific
-
-    winlean Wrapper for a small subset of the Win32 API.
-    registry Windows registry support.
-
-UNIX specific
-
-    posix Wrapper for the POSIX standard.
-    posix_utils Contains helpers for the POSIX standard or specialized for Linux and BSDs.
-
-Regular expressions
-
-    pcre Wrapper for the PCRE library.
-
-Database support
-
-    mysql Wrapper for the mySQL API.
-    odbcsql interface to the ODBC driver.
-    postgres Wrapper for the PostgreSQL API.
-    sqlite3 Wrapper for the SQLite 3 API.
-
-Network Programming and Internet Protocols
-
-    openssl Wrapper for OpenSSL.
-
-
-Made with Nim. Generated: 2026-09-08 04:33:43 UTC
-
 
 Nim Manual
 Theme: 
@@ -11573,6 +11267,313 @@ This document only scratched the surface of how Nim’s handles memory, there is
 This is a document in progress, any comments are much appreciated. The source can be found on github at https://github.com/zevv/nim-memory
 
 
+Nim Standard Library
+Theme: 
+
+    Manual
+    Standard library
+    Index
+    Compiler docs
+    Fusion docs
+    devel, stable
+
+Search:
+Group by:
+
+    Nimble
+    Pure libraries
+        Automatic imports
+        Core
+        Algorithms
+        Collections
+        String handling
+        Time handling
+        Generic Operating System Services
+        Math libraries
+        Internet Protocols and Support
+        Threading
+        Parsers
+        Docutils
+        XML Processing
+        Generators
+        Hashing
+        Serialization
+        Miscellaneous
+        Modules for the JavaScript backend
+    Impure libraries
+        Regular expressions
+        Database support
+        Generic Operating System Services
+    Wrappers
+        Windows-specific
+        UNIX specific
+        Regular expressions
+        Database support
+        Network Programming and Internet Protocols
+
+Source   Edit  
+
+Author:	Andreas Rumpf
+Version:	2.2.12
+
+Nim's library is divided into pure libraries, impure libraries, and wrappers.
+
+Pure libraries do not depend on any external *.dll or lib*.so binary while impure libraries do. A wrapper is an impure library that is a very low-level interface to a C library.
+
+Read this document for a quick overview of the API design.
+Nimble
+
+Nim's standard library only covers the basics, check out https://nimble.directory/ for a list of 3rd party packages.
+Pure libraries
+Automatic imports
+
+    system Basic procs and operators that every program needs. It also provides IO facilities for reading and writing text and binary files. It is imported implicitly by the compiler. Do not import it directly. It relies on compiler magic to work.
+
+Core
+
+    atomics Types and operations for atomic operations and lockless algorithms.
+    bitops Provides a series of low-level methods for bit manipulation.
+    compilesettings Querying the compiler about diverse configuration settings from code.
+    cpuinfo Procs to determine the number of CPUs / cores.
+    effecttraits Access to the inferred .raises effects for Nim's macro system.
+    endians Helpers that deal with different byte orders.
+    locks Locks and condition variables for Nim.
+    macrocache Provides an API for macros to collect compile-time information across modules.
+    macros Contains the AST API and documentation of Nim for writing macros.
+    rlocks Reentrant locks for Nim.
+    typeinfo Provides (unsafe) access to Nim's run-time type information.
+    typetraits Compile-time reflection procs for working with types.
+    volatile Code for generating volatile loads and stores, which are useful in embedded and systems programming.
+
+Algorithms
+
+    algorithm Some common generic algorithms like sort or binary search.
+    enumutils Additional functionality for the built-in enum type.
+    sequtils Operations for the built-in seq type which were inspired by functional programming languages.
+    setutils Additional functionality for the built-in set type.
+
+Collections
+
+    critbits A crit bit tree which is an efficient container for a sorted set of strings, or a sorted mapping of strings.
+    deques Implementation of a double-ended queue. The underlying implementation uses a seq.
+    heapqueue Implementation of a binary heap data structure that can be used as a priority queue.
+    intsets Efficient implementation of a set of ints as a sparse bit set.
+    lists Nim linked list support. Contains singly and doubly linked lists and circular lists ("rings").
+    options The option type encapsulates an optional value.
+    packedsets Efficient implementation of a set of ordinals as a sparse bit set.
+    ropes A rope data type. Ropes can represent very long strings efficiently; in particular, concatenation is done in O(1) instead of O(n).
+    sets Nim hash set support.
+    strtabs The strtabs module implements an efficient hash table that is a mapping from strings to strings. Supports a case-sensitive, case-insensitive and style-insensitive modes.
+    tables Nim hash table support. Contains tables, ordered tables, and count tables.
+
+String handling
+
+    cstrutils Utilities for cstring handling.
+    editdistance An algorithm to compute the edit distance between two Unicode strings.
+    encodings Converts between different character encodings. On UNIX, this uses the iconv library, on Windows the Windows API.
+    formatfloat Formatting floats as strings.
+    objectdollar A generic $ operator to convert objects to strings.
+    punycode Implements a representation of Unicode with the limited ASCII character subset.
+    strbasics Some high performance string operations.
+    strformat Macro based standard string interpolation/formatting. Inspired by Python's f-strings. Note: if you need templating, consider using Nim Source Code Filters (SCF).
+    strmisc Uncommon string handling operations that do not fit with the commonly used operations in strutils.
+    strscans A scanf macro for convenient parsing of mini languages.
+    strutils Common string handling operations like changing case of a string, splitting a string into substrings, searching for substrings, replacing substrings.
+    unicode Support for handling the Unicode UTF-8 encoding.
+    unidecode It provides a single proc that does Unicode to ASCII transliterations. Based on Python's Unidecode module.
+    widestrs Nim support for C/C++'s wide strings.
+    wordwrap An algorithm for word-wrapping Unicode strings.
+
+Time handling
+
+    monotimes The monotimes module implements monotonic timestamps.
+    times The times module contains support for working with time.
+
+Generic Operating System Services
+
+    appdirs Helpers for determining special directories used by apps.
+    cmdline System facilities for reading command line parameters.
+    dirs Directory handling.
+    distros Basics for OS distribution ("distro") detection and the OS's native package manager. Its primary purpose is to produce output for Nimble packages, but it also contains the widely used Distribution enum that is useful for writing platform-specific code. See packaging for hints on distributing Nim using OS packages.
+    dynlib Accessing symbols from shared libraries.
+    envvars Environment variable handling.
+    exitprocs Adding hooks to program exit.
+    files File handling.
+    memfiles Support for memory-mapped files (Posix's mmap) on the different operating systems.
+    os Basic operating system facilities like retrieving environment variables, reading command line arguments, working with directories, running shell commands, etc.
+    oserrors OS error reporting.
+    osproc Module for process communication beyond os.execShellCmd.
+    paths Path handling.
+    reservedmem Utilities for reserving portions of the address space of a program without consuming physical memory.
+    streams A stream interface and two implementations thereof: the FileStream and the StringStream which implement the stream interface for Nim file objects (File) and strings. Other modules may provide other implementations for this standard stream interface.
+    symlinks Symlink handling.
+    syncio Various synchronized I/O operations.
+    terminal A module to control the terminal output (also called console).
+    tempfiles Some utilities for generating temporary path names and creating temporary files and directories.
+
+Math libraries
+
+    complex Complex numbers and relevant mathematical operations.
+    fenv Floating-point environment. Handling of floating-point rounding and exceptions (overflow, zero-divide, etc.).
+    lenientops Binary operators for mixed integer/float expressions for convenience.
+    math Mathematical operations like cosine, square root.
+    random Fast and tiny random number generator.
+    rationals Rational numbers and relevant mathematical operations.
+    stats Statistical analysis.
+    sysrand Cryptographically secure pseudorandom number generator.
+
+Internet Protocols and Support
+
+    async Exports asyncmacro and asyncfutures for native backends, and asyncjs on the JS backend.
+    asyncdispatch An asynchronous dispatcher for IO operations.
+    asyncfile An asynchronous file reading and writing using asyncdispatch.
+    asyncftpclient An asynchronous FTP client using the asyncnet module.
+    asynchttpserver An asynchronous HTTP server using the asyncnet module.
+    asyncmacro async and multisync macros for asyncdispatch.
+    asyncnet Asynchronous sockets based on the asyncdispatch module.
+    asyncstreams FutureStream - a future that acts as a queue.
+    cgi Helpers for CGI applications.
+    cookies Helper procs for parsing and generating cookies.
+    httpclient A simple HTTP client with support for both synchronous and asynchronous retrieval of web pages.
+    mimetypes A mimetypes database.
+    nativesockets A low-level sockets API.
+    net A high-level sockets API.
+    selectors A selector API with backends specific to each OS. Supported OS primitives: epoll, kqueue, poll, and select on Windows.
+    smtp A simple SMTP client with support for both synchronous and asynchronous operation.
+    socketstreams An implementation of the streams interface for sockets.
+    uri Functions for working with URIs and URLs.
+
+Threading
+
+    isolation The Isolated[T] type for safe construction of isolated subgraphs that can be passed efficiently to different channels and threads.
+    tasks Basic primitives for creating parallel programs.
+    threadpool Implements Nim's spawn.
+    typedthreads Basic Nim thread support.
+
+Parsers
+
+    htmlparser HTML document parser that creates a XML tree representation.
+    json High-performance JSON parser.
+    lexbase A low-level module that implements an extremely efficient buffering scheme for lexers and parsers. This is used by the diverse parsing modules.
+    parsecfg The parsecfg module implements a high-performance configuration file parser. The configuration file's syntax is similar to the Windows .ini format, but much more powerful, as it is not a line based parser. String literals, raw string literals, and triple quote string literals are supported as in the Nim programming language.
+    parsecsv The parsecsv module implements a simple high-performance CSV parser.
+    parsejson A JSON parser. It is used and exported by the json module, but can also be used in its own right.
+    parseopt The parseopt module implements a command line option parser.
+    parsesql The parsesql module implements a simple high-performance SQL parser.
+    parseutils Helpers for parsing tokens, numbers, identifiers, etc.
+    parsexml The parsexml module implements a simple high performance XML/HTML parser. The only encoding that is supported is UTF-8. The parser has been designed to be somewhat error-correcting, so that even some "wild HTML" found on the web can be parsed with it.
+    pegs Procedures and operators for handling PEGs.
+
+Docutils
+
+    packages/docutils/highlite Source highlighter for programming or markup languages. Currently, only a few languages are supported, other languages may be added. The interface supports one language nested in another.
+    packages/docutils/rst A reStructuredText parser. A large subset is implemented. Some features of the markdown wiki syntax are also supported.
+    packages/docutils/rstast An AST for the reStructuredText parser.
+    packages/docutils/rstgen A generator of HTML/Latex from reStructuredText.
+
+XML Processing
+
+    xmltree A simple XML tree. More efficient and simpler than the DOM. It also contains a macro for XML/HTML code generation.
+    xmlparser XML document parser that creates a XML tree representation.
+
+Generators
+
+    genasts AST generation using captured variables for macros.
+    htmlgen A simple XML and HTML code generator. Each commonly used HTML tag has a corresponding macro that generates a string with its HTML representation.
+
+Hashing
+
+    base64 A Base64 encoder and decoder.
+    hashes Efficient computations of hash values for diverse Nim types.
+    md5 The MD5 checksum algorithm.
+    oids An OID is a global ID that consists of a timestamp, a unique counter, and a random value. This combination should suffice to produce a globally distributed unique ID.
+    sha1 The SHA-1 checksum algorithm.
+
+Serialization
+
+    jsonutils Hookable (de)serialization for arbitrary types using JSON.
+    marshal Contains procs for serialization and deserialization of arbitrary Nim data structures.
+
+Miscellaneous
+
+    assertions Assertion handling.
+    browsers Procs for opening URLs with the user's default browser.
+    colors Color handling.
+    coro Experimental coroutines in Nim.
+    decls Syntax sugar for some declarations.
+    enumerate enumerate syntactic sugar based on Nim's macro system.
+    importutils Utilities related to import and symbol resolution.
+    logging A simple logger.
+    segfaults Turns access violations or segfaults into a NilAccessDefect exception.
+    sugar Nice syntactic sugar based on Nim's macro system.
+    unittest Implements a Unit testing DSL.
+    varints Decode variable-length integers that are compatible with SQLite.
+    with The with macro for easy function chaining.
+    wrapnils Allows evaluating expressions safely against nil dereferences.
+
+Modules for the JavaScript backend
+
+    asyncjs Types and macros for writing asynchronous procedures in JavaScript.
+    dom Declaration of the Document Object Model for the JS backend.
+    jsbigints Arbitrary precision integers.
+    jsconsole Wrapper for the console object.
+    jscore The wrapper of core JavaScript functions. For most purposes, you should be using the math, json, and times stdlib modules instead of this module.
+    jsfetch Wrapper for fetch.
+    jsffi Types and macros for easier interaction with JavaScript.
+    jsre Regular Expressions for the JavaScript target.
+
+Impure libraries
+Regular expressions
+
+    re Procedures and operators for handling regular expressions. The current implementation uses PCRE.
+
+    nre
+
+    Many help functions for handling regular expressions. The current implementation uses PCRE.
+
+Database support
+
+    db_mysql A higher level MySQL database wrapper. The same interface is implemented for other databases too.
+    db_odbc A higher level ODBC database wrapper. The same interface is implemented for other databases too.
+    db_postgres A higher level PostgreSQL database wrapper. The same interface is implemented for other databases too.
+    db_sqlite A higher level SQLite database wrapper. The same interface is implemented for other databases too.
+
+Generic Operating System Services
+
+    rdstdin Code for reading user input from stdin.
+
+Wrappers
+
+The generated HTML for some of these wrappers is so huge that it is not contained in the distribution. You can then find them on the website.
+Windows-specific
+
+    winlean Wrapper for a small subset of the Win32 API.
+    registry Windows registry support.
+
+UNIX specific
+
+    posix Wrapper for the POSIX standard.
+    posix_utils Contains helpers for the POSIX standard or specialized for Linux and BSDs.
+
+Regular expressions
+
+    pcre Wrapper for the PCRE library.
+
+Database support
+
+    mysql Wrapper for the mySQL API.
+    odbcsql interface to the ODBC driver.
+    postgres Wrapper for the PostgreSQL API.
+    sqlite3 Wrapper for the SQLite 3 API.
+
+Network Programming and Internet Protocols
+
+    openssl Wrapper for OpenSSL.
+
+
+Made with Nim. Generated: 2026-09-08 04:33:43 UTC
+
+
 Nim Compiler User Guide
 Theme: 
 
@@ -12349,1337 +12350,6 @@ else: quit(errorStr(p, "unknown variable: " & k.key))
 
 
 Made with Nim. Generated: 2026-09-08 04:34:10 UTC
-
-
-Skip to content
-Nimble User Guide
-Nimble User Guide
-Type to start searching
-logo
-Nimble User Guide
-nim-lang/nimble
-
-    v0.24.1
-    1.4k
-    210
-
-    Home
-    Home
-        Nimble User Guide
-        Table of contents
-            Install Nimble
-            System Requirements
-            Automatic Nim Version Management
-                How It Works
-                Benefits
-                Using System Nim
-            Getting Started
-        Installing Nimble
-        Installing Nim
-    Use existing packages
-    Use existing packages
-        Use existing Nimble packages
-    Create Nimble packages
-    Create Nimble packages
-        Creating Nimble packages
-    Nimble develop workflow
-    Nimble develop workflow
-        Nimble develop workflow
-    Misc
-    Misc
-        Nimble package types
-        Configuration
-        .nimble file reference
-        Nimble's folder structure and packages
-        Troubleshooting
-
-Nimble User Guide
-
-Nimble is the default package manager for the Nim programming language.
-
-It can search for Nim packages, install dependencies, create new packages and upload them to the official package list (see nimble.directory), and much more.
-Install Nimble
-
-Nimble is bundled with Nim. This means that you should have Nimble installed already, as long as you have the latest version of Nim installed as well. Because of this, it is very likely that you do not need to install Nimble manually.
-
-In case you still want to install Nimble manually, you can follow these installation instructions.
-System Requirements
-
-Nimble has some runtime dependencies on external tools, these tools are used to download Nimble packages. For instance, if a package is hosted on GitHub, you need to have git installed and added to your environment PATH. The same goes for Mercurial repositories. Nimble packages are typically hosted in Git repositories so you may be able to get away without installing Mercurial.
-
-Warning
-
-Ensure that you have a fairly recent version of Git installed. Current minimal supported version is Git 2.22 from 2019-06-07.
-Automatic Nim Version Management
-
-Nimble can automatically download and manage Nim versions for your projects. This feature ensures that each project uses the correct Nim version without manual intervention.
-How It Works
-
-When you run Nimble commands like build or install:
-
-    Nimble checks your project's Nim requirement specified in the .nimble file (e.g., requires "nim >= 2.0.0")
-    If a compatible Nim is not available, Nimble automatically downloads a prebuilt binary from nim-lang.org
-    The downloaded Nim is cached in ~/.nimble/nim/ and reused for future builds
-
-Benefits
-
-    No manual Nim installation required - Just install Nimble and start building
-    Per-project Nim versions - Different projects can use different Nim versions
-    Lock file support - The exact Nim version can be pinned in nimble.lock
-    Automatic updates - When a project requires a newer Nim, it's downloaded automatically
-
-Using System Nim
-
-Nimble will always try to match your system Nim version against the project's requirements. The --useSystemNim flag is used to bypass stricter constraints when you want to force the use of your locally installed Nim:
-
-nimble
- build --useSystemNim
-
-This is useful when:
-
-    You have a custom Nim build
-    You're working offline and already have Nim installed
-    You want to test with a specific Nim version not available as a binary
-
-Getting Started
-
-    If you wish to explore existing Nim packages and install some of them, follow the using packages guide.
-
-    If you would like to create your own Nimble package, the create Nimble packages guide is for you.
-
-    To learn more about how to use the new workflow with nimble develop, follow the Nimble develop guide.
-
-September 14, 2026
-Made with Material for MkDocs
-
-
-Skip to content
-Nimble User Guide
-Use existing Nimble packages
-Type to start searching
-logo
-Nimble User Guide
-nim-lang/nimble
-
-    v0.24.1
-    1.4k
-    210
-
-    Home
-    Home
-        Nimble User Guide
-        Installing Nimble
-        Installing Nim
-    Use existing packages
-    Use existing packages
-        Use existing Nimble packages
-        Table of contents
-            nimble install
-                Installing a specific version
-                Package URLs
-                Local Package Development
-            nimble list
-            nimble search
-                nimble.directory
-            nimble uninstall
-            nimble lock
-            nimble refresh
-            nimble deps
-                Options
-            nimble path
-    Create Nimble packages
-    Create Nimble packages
-        Creating Nimble packages
-    Nimble develop workflow
-    Nimble develop workflow
-        Nimble develop workflow
-    Misc
-    Misc
-        Nimble package types
-        Configuration
-        .nimble file reference
-        Nimble's folder structure and packages
-        Troubleshooting
-
-Use existing Nimble packages
-
-While Nim has a relatively large standard library, chances are that at some point you will want to use some 3rd party library. In the following sections, we will show you the most used nimble commands for that purpose.
-nimble install
-
-The install command will download and install a package. You need to pass the name of the package (or packages) you want to install. If any of the packages depend on other Nimble packages Nimble will also install them. Example:
-
-$
- nimble install nake
-Downloading
- https://github.com/fowlmouth/nake using git
-      ...
-  Success:  nake installed successfully.
-
-Nimble always fetches and installs the latest version of a package. Note that the latest version is defined as the latest tagged version in the Git (or Mercurial) repository. If the package has no tagged versions then the latest commit in the remote repository will be installed. If you already have that version installed, Nimble will ask you whether you wish to overwrite your local copy.
-Installing a specific version
-
-You can force Nimble to download the latest commit from the package's repo, for example:
-
-$ nimble install nimgame@#head
-
-This is of course Git-specific, for Mercurial, use tip instead of head. A branch, tag, or commit hash may also be specified in the place of head.
-
-Instead of specifying a VCS branch, you may also specify a concrete version or a version range, for example:
-
-$ nimble install nimgame@0.5
-$ nimble install nimgame@"> 0.5"
-
-The following version selector operators are available:
-Operator 	Meaning
-== 	Install the exact version.
-> 	Install higher version.
-< 	Install lower version.
->= 	Install at least the provided version.
-<= 	Install at most the provided version.
-^= 	Install the latest compatible version according to semver.
-~= 	Install the latest version by increasing the last given digit
-to the highest version. 	
-
-Nim flags provided to nimble install will be forwarded to the compiler when building any binaries. Such compiler flags can be made persistent by using Nim configuration files.
-Package URLs
-
-A valid URL to a Git or Mercurial repository can also be specified, Nimble will automatically detect the type of the repository that the url points to and install it. This way, the packages which are not in the official package list can be installed.
-
-For repositories containing the Nimble package in a subdirectory, you can instruct Nimble about the location of your package using the ?subdir=<path> query parameter. For example:
-
-$ nimble install https://github.com/nimble-test/multi?subdir=alpha
-
-Local Package Development
-
-The install command can also be used for locally testing or developing a Nimble package by leaving out the package name parameter. Your current working directory must be a Nimble package and contain a valid package.nimble file.
-
-Nimble will install the package residing in the current working directory when you don't specify a package name and the directory contains a package.nimble file. This can be useful for developers who are locally testing their .nimble files before submitting them to the official package list. See the Create Packages guide for more info on this.
-
-Dependencies required for developing or testing a project can be installed by passing --depsOnly without specifying a package name. Nimble will then install any missing dependencies listed in the package's package.nimble file in the current working directory. Note that dependencies will be installed globally.
-
-For example to install the dependencies for a Nimble project myPackage:
-
-$ cd myPackage
-$ nimble install --depsOnly
-
-nimble list
-
-If you want to list all available packages, you can use nimble list, but beware: it is a very long (and not very useful) list.
-
-Naming one or more packages restricts the output to those packages:
-
-$ nimble list chronos
-
-chronos:
-  url:         https://github.com/status-im/nim-chronos (git)
-  tags:        library, networking, async, asynchronous, eventloop, timers, sendfile, tcp, udp
-  description: An efficient library for asynchronous programming
-  license:     Apache License 2.0
-  website:     https://github.com/status-im/nim-chronos
-
-The name has to match a known package exactly, though the comparison is case insensitive. Nimble exits with an error if it does not know the package; use nimble search (explained below) to look for packages by name fragment or tag instead.
-
-Add --ver to also query the package's repository for the versions it has tagged:
-
-$ nimble list chronos --ver
-
-chronos:
-  url:         https://github.com/status-im/nim-chronos (git)
-  ...
-  versions:    v4.4.0, v4.2.4, v4.2.3, v4.2.2, v4.2.0, v4.0.7, ...
-
-Because --ver contacts each matching package's repository, it is worth naming the packages you care about. nimble list --ver on its own queries every package Nimble knows about, one at a time.
-
-A name may carry a version range, spelled exactly as it would be in a requires line, to narrow the versions reported. Giving a range implies --ver:
-
-$ nimble list "chronos >= 4.0.4"
-
-chronos:
-  url:         https://github.com/status-im/nim-chronos (git)
-  ...
-  versions:    v4.4.0, v4.2.4, v4.2.3, v4.2.2, v4.2.0, v4.0.7, v4.0.6, v4.0.5, v4.0.4
-
-Quote the argument so the shell keeps it as one word. Any range accepted in a requires line works, including == 4.2.0 and >= 4.0.0 & < 4.3.0. A range that matches nothing is not an error — the package is still listed, with a note in place of the versions:
-
-$ nimble list "chronos >= 99"
-
-chronos:
-  ...
-  versions:    (No tagged versions match >= 99)
-
-Only tagged releases are matched, so a special version such as chronos#head reports no matches: #head is a branch, not a tag.
-
-If you want to see a list of locally installed packages and their versions, use --installed, or -i for short:
-
-$ nimble list -i
-
-This also accepts package names and version ranges, so nimble list -i chronos reports just the installed copies of chronos, and nimble list -i "chronos >= 4.0.4" narrows that to the installed versions in range.
-nimble search
-
-If you don't want to go through the whole output of the list command you can use the search command specifying as parameters the package name and/or tags you want to filter. Nimble will look into the known list of available packages and display only those that match the specified keywords (which can be substrings). Example:
-
-$ nimble search math
-
-linagl:
-url:         https://bitbucket.org/BitPuffin/linagl (hg)
-tags:        library, opengl, math, game
-description: OpenGL math library
-license:     CC0
-website:     https://bitbucket.org/BitPuffin/linagl
-
-extmath:
-url:         git://github.com/achesak/extmath.nim (git)
-tags:        library, math, trigonometry
-description: Nim math library
-license:     MIT
-website:     https://github.com/achesak/extmath.nim
-
-glm:
-url:         https://github.com/stavenko/nim-glm (git)
-tags:        opengl, math, matrix, vector, glsl
-description: Port of c++ glm library with shader-like syntax
-license:     MIT
-website:     https://github.com/stavenko/nim-glm
-
-...
-
-Searches are case insensitive.
-
-An optional --ver parameter can be specified to tell Nimble to query remote Git repositories for the list of versions of the packages and then print the versions. However, please note that this can be slow as each package must be queried separately.
-nimble.directory
-
-As an alternative for nimble search command, you can use Nimble Directory website to search for packages.
-nimble uninstall
-
-The uninstall command will remove an installed package.
-
-Warning
-
-Attempting to remove a package that other packages depend on will result in an error.
-
-You can use the --inclDeps or -i flag to remove all dependent packages along with the package.
-
-Similar to the install command you can specify a version range, for example:
-
-$ nimble uninstall nimgame@0.5
-
-nimble lock
-
-The lock command generates or updates a package lock file. On its own it keeps every pin it already has, only re-solving when a package's requirements changed:
-
-$
- nimble lock
-
-Two things ask it to move a pin, and they combine.
-
-Naming packages relocks those and leaves the rest of the file alone:
-
-$
- nimble lock chronos
-
---refresh resolves against the package repositories instead of the cached version information, so versions published since the last lock are picked up. With no package named it relocks everything to the newest available:
-
-$
- nimble lock --refresh          # everything, to the newest published
-$
- nimble lock --refresh chronos  # just chronos, to the newest published
-
-The distinction matters because lock normally resolves from Nimble's version cache. Without --refresh, nimble lock chronos moves chronos only as far as the newest version Nimble already knows about, which may be older than what upstream has published.
-
-nimble upgrade is a deprecated alias of lock --refresh; it still works but prints a warning.
-nimble refresh
-
-The refresh command is used to fetch and update the list of Nimble packages. There is no automatic update mechanism, so you need to run this yourself if you need to refresh your local list of known available Nimble packages. Example:
-
-$
- nimble refresh
-    Copying local package list
-    Success Package list copied.
-Downloading
- Official package list
-    Success Package list downloaded.
-
-Package lists can be specified in Nimble's config. You can also optionally supply this command with a URL if you would like to use a third-party package list.
-
-Some commands may remind you to run nimble refresh or will run it for you if they fail.
-
-Refreshing the package list only tells Nimble which packages exist. To also learn which versions of them exist, refresh goes on to fetch the repositories behind the packages it knows about and reports the newer versions that became visible:
-
-$
- nimble refresh
-Downloading
- Official package list
-    Success Package list downloaded.
-  Refreshed 3 dependencies of myproject
-      Info: Newer versions available:
-              chronos 4.0.3 -> 4.0.4
-
-Which packages that covers depends on where you run it:
-
-    Inside a package — its dependencies, including transitive ones. Any develop dependency with a clean working copy is also moved to its newest tag; one with uncommitted changes is reported and left untouched.
-    Outside a package, or with -g / --global — every package Nimble knows about globally: those installed in the global package directory, plus every package already in its version cache.
-
-nimble refresh only updates what Nimble knows is available. It picks no versions, writes no lock file and installs nothing, so it is safe to run at any time; use nimble install or nimble lock --refresh afterwards to actually act on what it found.
-
-Other commands resolve against that cached version information rather than the repositories, which is why a freshly published version can stay invisible to them until the cache is updated. Pass --refresh to any of them to resolve against the repositories instead:
-
-$
- nimble install --refresh   # also works with lock, upgrade, build, ...
-
-Since it contacts every relevant repository, a global refresh can take a while. It fetches several of them at a time and reports its progress as it goes; pass --sync to fetch them one by one instead. To skip it entirely and update only the package list, use --packageListOnly:
-
-$
- nimble refresh --packageListOnly
-
-nimble deps
-
-The nimble deps command displays the dependency tree of the current package. It shows all direct and transitive dependencies along with their version requirements and resolved versions.
-
-$
- nimble deps
-
-The output format is:
-
-{PackageName} {Requirements} (@{Resolved Version})
-
-For example:
-
-mypackage (@1.0.0)
-├── jester @>= 0.5.0 (@0.6.0)
-│   └── httpbeast @>= 0.4.0 (@0.4.1)
-└── chronicles @any (@0.10.3)
-
-Options
-
-    --format:json - Output the dependency tree in JSON format for programmatic use.
-    -i or --inverted - Show an inverted dependency tree where each package lists which packages depend on it.
-    -d or --direct - Show only direct dependencies (no transitive dependencies).
-
-nimble path
-
-The nimble path command will show the absolute path to the installed packages matching the specified parameters. Since there can be many versions of the same package installed, this command will list all of them, for example:
-
-$
- nimble path itertools
-/home/user/.nimble/pkgs2/itertools-0.4.0-5a3514a97e4ff2f6ca4f9fab264b3be765527c7f
-/home/user/.nimble/pkgs2/itertools-0.2.0-ab2eac22ebda6512d830568bfd3052928c8fa2b9
-
-September 14, 2026
-Made with Material for MkDocs
-
-
-Skip to content
-Nimble User Guide
-Creating Nimble packages
-Type to start searching
-logo
-Nimble User Guide
-nim-lang/nimble
-
-    v0.24.1
-    1.4k
-    210
-
-    Home
-    Home
-        Nimble User Guide
-        Installing Nimble
-        Installing Nim
-    Use existing packages
-    Use existing packages
-        Use existing Nimble packages
-    Create Nimble packages
-    Create Nimble packages
-        Creating Nimble packages
-        Table of contents
-            nimble init
-            Project structure
-            .nimble file
-                Dependencies
-                NimScript compatibility
-                Declarative Parser (Experimental)
-                Features (Experimental)
-                    Checking Active Features in Code
-                The dev Feature
-                nimble tasks
-            nimble test
-            nimble c
-            nimble build
-            nimble run
-            nimble check
-            nimble install
-            nimble dump
-            nimble publish
-                Releasing a new version
-                    Git Version Tagging
-    Nimble develop workflow
-    Nimble develop workflow
-        Nimble develop workflow
-    Misc
-    Misc
-        Nimble package types
-        Configuration
-        .nimble file reference
-        Nimble's folder structure and packages
-        Troubleshooting
-
-Creating Nimble packages
-
-In this guide you will find the information on how to create and publish new Nimble packages.
-nimble init
-
-The easiest and recommended way to start a new Nimble project is to run nimble init in the directory in which you want to create a package, and follow the steps in the wizard.
-
-$ nimble init
-      Info: Package initialisation requires info which could not be inferred.
-        ... Default values are shown in square brackets, press
-        ... enter to use them.
-      Using "myPackage" for new package name
-      Using username for new package author
-      Using "src" for new package source directory
-    Prompt: Package type?
-        ... Library - provides functionality for other packages.
-        ... Binary  - produces an executable for the end-user.
-        ... Hybrid  - combination of library and binary
-        ... For more information see https://nim-lang.github.io/nimble/package-types.html
-     Select Cycle with 'Tab', 'Enter' when done
-   Choices:> library <
-             binary  
-             hybrid  
-
-The first choice you have to make is the type of your package. The differences between those three options are outlined in this document.
-
-After that, the wizard asks you about the version number of your package (default: 0.1.0), a package description, a license you want to use and the lowest Nim version that your package is compatible with. You can press enter to use the provided default answer for each question.
-
-    Prompt: Initial version of package? [0.1.0]
-    Answer: 
-    Prompt: Package description? [A new awesome nimble package]
-    Answer: Check if a number is odd.         
-    Prompt: Package License?
-        ... This should ideally be a valid SPDX identifier. See https://spdx.org/licenses/.
-     Select Cycle with 'Tab', 'Enter' when done
-    Answer: MIT
-    Prompt: Lowest supported Nim version? [2.1.1]
-    Answer: 2.0.0
-   Success: Package myPackage created successfully
-
-After the wizard completes, the structure of your directory looks like this:
-
-.
-├── myPackage.nimble
-├── src
-│   ├── myPackage
-│   │   └── submodule.nim
-│   └── myPackage.nim
-└── tests
-    ├── config.nims
-    └── test1.nim
-
-The answers you provided are stored in the .nimble file:
-
-# Package
-
-version       = "0.1.0"
-author        = "username"
-description   = "Check if a number is odd."
-license       = "MIT"
-srcDir        = "src"
-
-
-# Dependencies
-
-requires "nim >= 2.0.0"
-
-Project structure
-
-For a package named foobar, the recommended project structure is the following:
-
-.
-                   # The root directory of the project
-├──
- LICENSE
-├──
- README.md
-├──
- foobar.nimble   # The project .nimble file
-└──
- src
-    └── foobar.nim  # Imported via `import foobar`
-└──
- tests           # Contains the tests
-    ├── config.nims
-    ├── tfoo1.nim   # First test
-    └── tfoo2.nim   # Second test
-
-Note
-
-When source files are placed in a src directory, the .nimble file must contain a srcDir = "src" directive. The nimble init command takes care of that for you.
-
-When introducing more modules into your package, you should place them in a separate directory named foobar (i.e. your package's name). For example:
-
-.
-├──
- ...
-├──
- foobar.nimble
-├──
- src
-│
-   ├── foobar
-│
-   │   ├── utils.nim   # Imported via `import foobar/utils`
-│
-   │   └── common.nim  # Imported via `import foobar/common`
-│
-   └── foobar.nim      # Imported via `import foobar`
-└──
- ...
-
-You may wish to hide certain modules in your package from the users. Create a private directory for that purpose. For example:
-
-.
-├──
- ...
-├──
- foobar.nimble
-├──
- src
-│
-   ├── foobar
-│
-   │   ├── private
-│
-   │   │   └── hidden.nim  # Imported via `import foobar/private/hidden`
-│
-   │   ├── utils.nim
-│
-   │   └── common.nim
-│
-   └── foobar.nim
-└──
- ...
-
-.nimble file
-
-As seen above, running nimble init creates a basic .nimble file. It can be modified to add more dependencies and/or create custom tasks, etc.
-Dependencies
-
-If your package relies on other dependencies, you need to add them to the .nimble file. Nimble currently supports the installation of packages from a local directory, a Git repository and a mercurial repository.
-
-...
-
-# Dependencies
-
-requires "nim >= 2.0.0"
-requires "fizzbuzz == 1.0"
-requires "https://github.com/user/pkg#5a54b5e"
-requires "https://github.com/user/pkg >= 2.0.0"
-requires "foobar#head"
-
-Versions of cloned packages via Git or Mercurial are determined through the repository's tags. When installing a package that needs to be downloaded, Nimble will check the cloned repository's tags list.
-
-    If no tags exist, Nimble will simply install the HEAD of the repository.
-    If tags exist, Nimble will attempt to look for tags that resemble versions (e.g. v0.1) and will then find the latest version out of the available tags, once it does so it will install the package after checking out the latest version.
-
-You can force the installation of the HEAD of the repository by specifying #head after the package name in your dependency list.
-
-There are several version selector operators you can use:
-Operator 	Meaning
-== 	Install the exact version.
-> 	Install higher version.
-< 	Install lower version.
->= 	Install at least the provided version.
-<= 	Install at most the provided version.
-^= 	Install the latest compatible version according to semver.
-~= 	Install the latest version by increasing the last given digit to the highest version.
-
-Here are some examples of the ^= and ~= operators:
-
-requires "nim ^= 1.2.2"    # nim >= 1.2.2 & < 2.0.0
-requires "nim ~= 1.2.2"    # nim >= 1.2.2 & < 1.3.0
-requires "jester ^= 0.4.1" # jester >= 0.4.1 & < 0.5.0
-requires "jester ~= 0.4.1" # jester >= 0.4.1 & < 0.5.0
-requires "jester ~= 0.4"   # jester >= 0.4.0 & < 1.0.0
-requires "choosenim ~= 0"  # choosenim >= 0.0.0 & < 1.0.0
-requires "choosenim ^= 0"  # choosenim >= 0.0.0 & < 1.0.0
-
-NimScript compatibility
-
-The .nimble file is very flexible because it is interpreted using NimScript.
-
-Because of Nim's flexibility, the definitions remain declarative, with the added ability to use the Nim language to enrich your package specification. For example, you can define dependencies for specific platforms using Nim's when statement:
-
-when defined(macosx):
-  requires "libcurl >= 1.0.0"
-
-when defined(windows):
-  requires "puppy 1.5.4"
-
-Declarative Parser (Experimental)
-
-Starting in nimble 0.18.0, the declarative parser can be used.
-It can be activated using the flag --parser:declarative and will become the default parser in the future.
-
-The main advantage of the declarative parser is deterministic dependencies, allowing nimble to build a reliable cache.
-Another benefit is improved speed, as there is no need to spin up the Nim VM for every dependency.
-Features (Experimental)
-
-To support conditional dependencies when using the declarative parser, the feature block can be used.
-
-For example, Nim has two async backends: std/asyncdispatch, which ships with Nim, and chronos.
-A library may support both, but ideally, chronos should not be included in dependency resolution when using asyncdispatch.
-This can be achieved as follows:
-
-feature "chronos":
-  requires "chronos"
-
-In this example, chronos will only be installed when the chronos feature is activated.
-
-There are two ways to activate a feature:
-
-    By passing a flag to the root package:
-
-    nimble
-     --features:chronos install
-
-    By activating it in a dependency using the [] operator:
-
-    requires "awesomeAsyncPackage[chronos]"
-
-Multiple features can be activated for a package as follows:
-
-requires "awesomeAsyncPackage[chronos, feature2]"
-
-Checking Active Features in Code
-
-In Nim code, you can check if a given feature is activated using the when operator:
-
-when defined(features.awesomeAsyncPackage.chronos):
-  import chronos
-
-The format follows: features.packageName.featureName.
-The dev Feature
-
-An implicit feature, dev, is always activated when developing a package.
-It is useful for requiring development-specific dependencies.
-
-For example:
-
-feature "dev":
-  requires "unittest2"
-
-Since the dev feature is used frequently, an alias is available:
-
-dev:
-  requires "unittest2"
-
-nimble tasks
-
-Another great feature of .nimble file is the ability to define custom Nimble package-specific commands:
-
-task hello, "This is a hello task":
-  echo "Hello World!"
-
-You can then execute nimble hello, which will result in the following output:
-
-$
- nimble hello
-  Verifying dependencies for myPackage@0.1.0
-  Executing task hello in /home/username/myPackage/myPackage.nimble
-Hello
- world
-
-You can also check what tasks are supported by the package in the current directory by using the nimble tasks command, for example:
-
-$
- nimble tasks
-hello
-     This is a hello task
-
-You can place any Nim code inside these tasks, as long as that code does not access the FFI. The nimscript module in Nim's standard library defines additional functionality, such as the ability to execute external processes which makes this feature very powerful.
-
-Nimble provides an API that adds even more functionality. For example, you can specify pre- and post- hooks for any Nimble command (including commands that you define yourself). To do this you can add something like the following:
-
-before hello:
-  echo "About to call hello!"
-
-That will result in the following output when nimble hello is executed:
-
-$ nimble hello
-  Verifying dependencies for myPackage@0.1.0
-About to call hello!
-  Executing task hello in /home/username/myPackage/myPackage.nimble
-Hello world
-
-Similar to this, an after block is also available for post hooks, which are executed after Nimble finished executing a command. You can also return false from these blocks to stop further execution.
-
-Tasks support two kinds of flags: nimble <compflags> task <runflags>.
-
-Compile flags are those specified before the task name and are forwarded to the Nim compiler that runs the .nimble task. This enables setting --define:xxx values that can be checked with when defined(xxx) in the task, and other compiler flags that are applicable in Nimscript mode.
-
-Run flags are those after the task name and are available as command-line arguments to the task. They can be accessed as usual from commandLineParams: seq[string].
-
-In order to forward compiler flags to exec("nim ...") calls executed within a custom task, the user needs to specify these flags as run flags which will then need to be manually accessed and forwarded in the task.
-nimble test
-
-Nimble offers a pre-defined test task that compiles and runs all files in the tests directory beginning with letter t in their filename. Nim flags provided to nimble test will be forwarded to the compiler when building the tests.
-
-If we run nimble test on our example project created in sections above, the default tests/test1.nim (pre-populated with one test) will run with the following output:
-
-$
- nimble test
-  Verifying dependencies for myPackage@0.1.0
-  Compiling /home/username/myPackage/tests/test1 (from package myPackage) using c backend
-[OK] can add
-   Success: Execution finished
-   Success: All tests passed
-
-You may wish to override the default test task in your .nimble file. Here is a real-world example of a custom test task, which runs tests from seven different test files:
-
-task test, "General tests":
-  for file in ["tsources.nim", "tblocks.nim", "tnimib.nim", "trenders.nim"]:
-    exec "nim r --hints:off tests/" & file
-  for file in ["tblocks.nim", "tnimib.nim", "trenders.nim"]:
-    exec "nim r --hints:off -d:nimibCodeFromAst tests/" & file
-
-nimble c
-
-The c (or compile, js, cc, cpp) command can be used by developers to compile individual modules inside their package. All options passed to Nimble will also be passed to the Nim compiler during compilation. For example:
-
-Nimble will use the backend specified in the package's .nimble file if the command c or compile is specified. The more specific js, cc, cpp can be used to override that.
-nimble build
-
-The build command is mostly used by developers who want to test building their .nimble package. This command will build the package with default flags, i.e. a debug build which includes stack traces but no GDB debug information. The install command will build the package in release mode instead.
-
-Nim flags provided to nimble build will be forwarded to the compiler. Such compiler flags can be made persistent by using Nim configuration files.
-nimble run
-
-The run command can be used to build and run any binary specified in your package's bin list. The binary needs to be specified after any compilation flags if there are several binaries defined. Any flags after the binary or -- are passed to the binary when it is run. It is possible to run a binary from some dependency package. To do this pass the --package, -p option to Nimble. For example:
-
-nimble
- --package:foo run <compilation_flags> bar <run_flags>
-
-nimble check
-
-The check command will read your package's .nimble file. It will then verify that the package's structure is valid.
-
-Example:
-
-$ nimble check
-    Error: Package 'x' has an incorrect structure.
-    It should contain a single directory hierarchy for source files, named 'x',
-    but file 'foobar.nim' is in a directory named 'incorrect' instead.
-    This will be an error in the future.
-    Hint: If 'incorrect' contains source files for building 'x', rename it to 'x'.
-    Otherwise, prevent its installation by adding `skipDirs = @["incorrect"]`
-    to the .nimble file.
-  Failure: Validation failed
-
-When using the check command, the development mode dependencies are also validated against the lock file. The following reasons for validation failure are possible:
-
-    The package directory is not under version control.
-    The package working copy directory is not in clean state.
-    Current VCS revision is not pushed on any remote.
-    The working copy needs sync.
-    The working copy needs lock.
-    The working copy needs merge or re-base.
-
-nimble install
-
-While nimble install <packageName> is used to download and install an existing package (see this guide), it can also be used for locally testing or developing a Nimble package by leaving out the package name parameter. Your current working directory must be a Nimble package and contain a valid package.nimble file.
-
-Nimble will install the package residing in the current working directory when you don't specify a package name and the directory contains a package.nimble file. This can be useful for developers who are locally testing their .nimble files before submitting them to the official package list.
-
-Dependencies required for developing or testing a project can be installed by passing --depsOnly without specifying a package name. Nimble will then install any missing dependencies listed in the package's package.nimble file in the current working directory. Note that dependencies will be installed globally.
-
-For example, to install the dependencies:
-
-$ nimble install --depsOnly
-
-nimble dump
-
-Outputs information about the package in the current working directory in an ini-compatible format. Useful for tools wishing to read metadata about Nimble packages who do not want to use the NimScript evaluator.
-
-The format can be specified with --json or --ini (and defaults to --ini). Use nimble dump pkg to dump information about provided pkg instead.
-nimble publish
-
-Publishing packages isn't a requirement, but doing so allows people to associate a specific name to a URL pointing to your package. This mapping is stored in the official packages repository.
-
-This repository contains a packages.json file that lists all the published packages. It contains a set of package names with associated metadata. You can read more about this metadata in the readme for the packages repository.
-
-To publish your package, you can do it in two different ways:
-
-    Semi-automatically, by running nimble publish, which requires a valid GitHub account with a personal access token. The token is stored in $nimbleDir/github_api_token, which can be replaced if you need to update/replace your token.
-
-    Manually, by forking the packages repository, adding an entry into the packages.json file for your packages, and creating a pull request with your changes.
-
-You need to do this only once, i.e. no need to do it every time you increase the version of your package.
-Releasing a new version
-
-Version releases are done by creating a tag in your Git or Mercurial repository.
-
-Whenever you want to release a new version, you should remember to first increment the version in your .nimble file and commit your changes. Only after that is done should you tag the release.
-
-To summarize, the steps for release are:
-
-    Increment the version in your .nimble file.
-    Commit your changes.
-    Tag your release, by for example running git tag v0.2.0.
-    Push your tags and commits.
-
-Once the new tag is in the remote repository, Nimble will be able to detect the new version.
-Git Version Tagging
-
-Use dot-separated numbers to represent the release version in the git tag label. Nimble will parse these git tag labels to know which versions of a package are published.
-
-v0.2.0
-        # 0.2.0
-v1
-            # 1
-v1.2.3-zuzu
-   # 1.2.3
-foo-1.2.3.4
-   # 1.2.3.4
-
-September 14, 2026
-Made with Material for MkDocs
-
-
-Skip to content
-Nimble User Guide
-Nimble develop workflow
-Type to start searching
-logo
-Nimble User Guide
-nim-lang/nimble
-
-    v0.24.1
-    1.4k
-    210
-
-    Home
-    Home
-        Nimble User Guide
-        Installing Nimble
-        Installing Nim
-    Use existing packages
-    Use existing packages
-        Use existing Nimble packages
-    Create Nimble packages
-    Create Nimble packages
-        Creating Nimble packages
-    Nimble develop workflow
-    Nimble develop workflow
-        Nimble develop workflow
-        Table of contents
-            nimble setup
-            nimble lock
-            nimble develop
-                .nimble-link
-            nimble sync
-            nimble upgrade
-            Example
-    Misc
-    Misc
-        Nimble package types
-        Configuration
-        .nimble file reference
-        Nimble's folder structure and packages
-        Troubleshooting
-
-Nimble develop workflow
-
-This guide assumes you are already familiar with creating a new Nimble package.
-
-Here you will learn how to use nimble develop to update the dependencies of your package. First we will list and explain all commands connected to this workflow, and at the bottom of the page you'll see the example of using them in praxis.
-nimble setup
-
-The nimble setup command creates a nimble.paths file containing file system paths to the dependencies. It also includes the paths file in the config.nims file (by creating it if it does not already exist) to make them available for the compiler.
-
-The command also adds nimble.develop and nimble.paths files to the .gitignore file.
-
-Warning
-
-nimble.paths file is user-specific and must not be committed.
-nimble lock
-
-The nimble lock command will generate or update a package lock file named nimble.lock. This file is used for pinning the exact versions of the dependencies of the package. The file is intended to be committed and used by other developers to ensure that exactly the same version of the dependencies is used by all developers.
-
-The lock files have the structure as in the following example:
-
-{
-  "version": 2,
-  "packages": {
-     ...
-     "chronos": {
-      "version": "3.0.2",
-      "vcsRevision": "aab1e30a726bb47c5d3f4a75a826981836cde9e2",
-      "url": "https://github.com/status-im/nim-chronos",
-      "downloadMethod": "git",
-      "dependencies": [
-        "stew",
-        "bearssl",
-        "httputils",
-        "unittest2"
-      ],
-      "checksums": {
-        "sha1": "a1cdaa77995f2d1381e8f9dc129594f2fa2ee07f"
-      }
-    },
-    ...
-  }
-}
-
-    version - JSON schema version.
-    packages - JSON object containing JSON objects for all dependencies,
-    chronos - Nested JSON object keys are the names of the dependencies packages.
-    version - The version of the dependency.
-    vcsRevision - The revision at which the dependency is locked.
-    url - The URL of the repository of the package.
-    downloadMethod - git or hg according to the type of the repository at url.
-    dependencies - The direct dependencies of the package. Used for writing the reverse dependencies of the package in the nimbledata.json file. Those packages' names also must be in the lock file.
-    checksums - A JSON compound object containing different checksums used for verifying that a downloaded package is exactly the same as the pinned in the lock file package. Currently, only sha1 checksums are supported.
-    sha1 - The sha1 checksum of the package files.
-
-If a lock file nimble.lock exists, then on performing all Nimble commands which require searching for dependencies and downloading them in the case they are missing (like build, install, develop), it is read and its content is used to download the same version of the project dependencies by using the URL, download method and VCS revision written in it.
-
-The checksum of the downloaded package is compared against the one written in the lock file. In the case the two checksums are not equal then it will be printed error message and the operation will be aborted. Reverse dependencies are added for installed locked dependencies just like for any other package being locally installed.
-nimble develop
-
-The develop command is used for putting packages in a development mode. When executed with a list of packages, it clones their repositories. If it is executed in a package directory, it adds cloned packages to the special nimble.develop file. This is a special file which is used for holding the paths to development mode dependencies of the current directory package.
-
-When executed without any arguments inside a package directory, nimble develop sets up all of the project's dependencies in develop mode.
-
-nimble develop <pkg> can also be run outside of a project directory; in that case it clones the given package and records a free develop file for it, so it can be included from another project's develop file. It has the following structure:
-
-{
-    "version": 1,
-    "includes": [],
-    "dependencies": []
-}
-
-    version - JSON schema version
-    includes - JSON array of paths to included files.
-    dependencies - JSON array of paths to Nimble packages directories.
-
-The format for included develop files is the same as the project's develop file.
-
-Develop files validation rules:
-
-    The included develop files must be valid.
-    The packages listed in the dependencies section and in the included develop files are required to be valid Nimble packages, but they are not required to be valid dependencies of the current project. In the latter case, they are simply ignored.
-    The develop files of the develop mode dependencies of a package are being followed and processed recursively. Finally, only one common set of develop mode dependencies is created.
-    In the final set of develop mode dependencies, it is not allowed to have more than one package with the same name but with different file system paths.
-
-Just as with the install command, a package URL may also be specified instead of a name.
-
-If present, the validity of the package's develop file is added to the requirements for validity of the package which is determined by nimble check command.
-
-The develop command has a list of options:
-
-    -p, --path path - Specifies the path where the packages should be cloned.
-    -c, --create [path] - Creates an empty develop file with the name nimble.develop in the current directory, or, if a path is present, to the given directory with a given name.
-    -a, --add path - Adds the package at the given path to the nimble.develop file.
-    -r, --removePath path - Removes the package at the given path from the nimble.develop file.
-    -n, --removeName path - Removed the package with the given name from the nimble.develop file.
-    -i, --include file - Includes a develop file into the current directory's one.
-    -e, --exclude file - Excludes a develop file from the current directory's one.
-    --withDependencies - Clones for develop also the dependencies of the packages for which the develop command is executed.
-    --developFile - Changes the name of the develop file which to be manipulated. It is useful for creating a free develop file which is not associated with any project intended for inclusion in some other develop file.
-
-    Note: The -g, --global option (old style global link files) has been removed. Use per-project or free develop files instead.
-
-The options for manipulation of the develop files could be given only when executing develop command from some package's directory, unless --developFile option with a name of develop file is explicitly given.
-
-Because the develop files are user-specific and they contain local file system paths they must not be committed. (Running nimble setup takes care of this by adding nimble.develop to the .gitignore file.)
-.nimble-link
-
-These files are created by Nimble when using the develop command. They are very simple and contain two lines.
-
-    The first line: Always a path to the .nimble file.
-
-    The second line: Always a path to the Nimble package's source code. Usually $pkgDir/src, depending on what srcDir is set to.
-
-The paths written by Nimble are always absolute. But Nimble (and the Nim compiler) also supports relative paths, which will be read relative to the .nimble-link file.
-nimble sync
-
-The nimble sync command will synchronize develop mode dependencies with the content of the lock file. If the revision specified in the lock file is not found locally, it tries to fetch it from the configured remotes. If it is present on multiple branches, it tries to stay on the current one, and if can't, it prefers local branches rather than remote-tracking ones. If found on more than one branch, it gives the user a choice whether to switch.
-
-Sync operation will also download non-develop mode dependencies versions described in the lock file if they are not already present in the Nimble cache.
-
-If the -l, --listOnly option is given then the command only lists development mode dependencies whose working copies are out of sync, without actually syncing them and without downloading missing non-develop mode dependencies.
-nimble upgrade
-
-The nimble upgrade command updates dependencies in the lock file to the newest versions compatible with the package's requirements.
-
-    nimble upgrade with no arguments upgrades all dependencies to the newest compatible versions.
-    nimble upgrade <pkg> [<pkg> ...] upgrades only the named package(s), leaving the rest of the lock file untouched.
-
-nimble
- upgrade            # upgrade everything
-nimble
- upgrade itertools  # upgrade only itertools
-
-Example
-
-Starting from a myPackage project we used as an example in creating Nimble packages guide, first we will add some dependencies to the myPackage.nimble file:
-
-...
-
-# Dependencies
-
-requires "nim >= 2.0.0"
-requires "nimibook == 0.3.1"
-requires "itertools == 0.3.0"
-
-...
-
-Now we run nimble setup to see if we already have all needed dependencies or if there is something that needs to be downloaded. This command also creates/updates nimble.paths and config.nims files.
-
-$
- nimble setup
-  Verifying dependencies for myPackage@0.1.0
-     Info:  Dependency on nimibook@0.3.1 already satisfied
-  Verifying dependencies for nimibook@0.3.1
-     Info:  Dependency on nimib@>= 0.3.7 already satisfied
-  Verifying dependencies for nimib@0.3.10
-     Info:  Dependency on fusion@>= 1.2 already satisfied
-  Verifying dependencies for fusion@1.2
-     Info:  Dependency on markdown@>= 0.8.1 already satisfied
-  Verifying dependencies for markdown@0.8.7
-     Info:  Dependency on mustache@>= 0.2.1 already satisfied
-  Verifying dependencies for mustache@0.4.3
-     Info:  Dependency on parsetoml@>= 0.7.0 already satisfied
-  Verifying dependencies for parsetoml@0.7.1
-     Info:  Dependency on jsony@>= 1.1.5 already satisfied
-  Verifying dependencies for jsony@1.1.5
-     Info:  Dependency on jsony@>= 1.1.5 already satisfied
-  Verifying dependencies for jsony@1.1.5
- Installing itertools@0.3.0
-Downloading
- https://github.com/narimiran/itertools using git
-  Verifying dependencies for itertools@0.3.0
- Installing itertools@0.3.0
-  Success:  itertools installed successfully.
-     Info:  "nimble.paths" is generated.
-     Info:  "config.nims" is set up.
-
-With all the dependencies installed, we can now create a lock file by running nimble lock:
-
-$
- nimble lock
-     Info:  Generating the lock file...
-  Verifying dependencies for myPackage@0.1.0
-     Info:  Dependency on nimibook@0.3.1 already satisfied
-  Verifying dependencies for nimibook@0.3.1
-     Info:  Dependency on nimib@>= 0.3.7 already satisfied
-  Verifying dependencies for nimib@0.3.10
-     Info:  Dependency on fusion@>= 1.2 already satisfied
-  Verifying dependencies for fusion@1.2
-     Info:  Dependency on markdown@>= 0.8.1 already satisfied
-  Verifying dependencies for markdown@0.8.7
-     Info:  Dependency on mustache@>= 0.2.1 already satisfied
-  Verifying dependencies for mustache@0.4.3
-     Info:  Dependency on parsetoml@>= 0.7.0 already satisfied
-  Verifying dependencies for parsetoml@0.7.1
-     Info:  Dependency on jsony@>= 1.1.5 already satisfied
-  Verifying dependencies for jsony@1.1.5
-     Info:  Dependency on jsony@>= 1.1.5 already satisfied
-  Verifying dependencies for jsony@1.1.5
-     Info:  Dependency on itertools@0.3.0 already satisfied
-  Verifying dependencies for itertools@0.3.0
-  Success:  The lock file is generated.
-
-We can run nimble check to verify everything is working properly:
-
-$
- nimble check
-  Success:  The package "myPackage" is valid.
-
-If you don't need to update and/or modify your dependencies, your job is done. You can commit the nimble.lock file to make sure other developers, when they work on your package, use the exact same dependencies as you.
-
-On the other hand, if you want to fix a bug in a dependency which manifests in your own package, or you want to see if an updated version of some dependency will still work with your package, the nimble develop command will come handy.
-
-For our example, let's say we want to update the itertools dependency from version 0.3.0 to version 0.4.0. We will put itertools in the develop mode, which will clone its git repo to a subdirectory of our package:
-
-$
- nimble develop itertools
-Downloading
- https://github.com/narimiran/itertools using git
-  Verifying dependencies for itertools@0.4.0
-  Success:  "itertools" set up in develop mode successfully to "/home/user/myPackage/itertools".
-  Success:  The package "itertools@0.4.0" at path "/home/user/myPackage/itertools"
-            is added to the develop file "nimble.develop".
-     Info:  "nimble.paths" is updated.
-
-If you check the contents of nimble.paths, you will notice that the path for itertools is no more in ~/.nimble/pkgs2 directory (where the version 0.3.0 is), but it has the following value:
-
-...
---path:
-"/home/user/myPackage/itertools/src"
-...
-
-We can now run our tests, which will use the updated version of itertools to see if everything still works as expected.
-
-Running nimble check now will correctly warn us that our working copy and the lock file are not synchronized:
-
-$
- nimble check
-    Error:  Some of package's develop mode dependencies are invalid.
-        ... Package "itertools" at "/home/user/myPackage/itertools" has not synced working copy..
-     Hint:  You have to call `nimble sync` to synchronize your develop mode dependencies working copies with the latest lock file.
-   Failure: Validation failed.
-
-There are two paths we can take to synchronize them. One is, as it says in the hint above, to put the development version at the state written in the lock file (in our case, to checkout version 0.3.0), by running nimble sync. The other option is to update the lock file (to use version 0.4.0) by running nimble lock.
-
-If we run nimble lock at this point, we will get an error, reminding us that in myPackage.nimble we still have requires "itertools == 0.3.0", which we need to manually update to 0.4.0. After we change the version number in the .nimble file, we can successfully run nimble lock:
-
-$
- nimble lock
-     Info:  Updating the lock file...
-  Verifying dependencies for myPackage@0.1.0
-     Info:  Dependency on nimibook@0.3.1 already satisfied
-  Verifying dependencies for nimibook@0.3.1
-     Info:  Dependency on nimib@>= 0.3.7 already satisfied
-  Verifying dependencies for nimib@0.3.10
-     Info:  Dependency on fusion@>= 1.2 already satisfied
-  Verifying dependencies for fusion@1.2
-     Info:  Dependency on markdown@>= 0.8.1 already satisfied
-  Verifying dependencies for markdown@0.8.7
-     Info:  Dependency on mustache@>= 0.2.1 already satisfied
-  Verifying dependencies for mustache@0.4.3
-     Info:  Dependency on parsetoml@>= 0.7.0 already satisfied
-  Verifying dependencies for parsetoml@0.7.1
-     Info:  Dependency on jsony@>= 1.1.5 already satisfied
-  Verifying dependencies for jsony@1.1.5
-     Info:  Dependency on jsony@>= 1.1.5 already satisfied
-  Verifying dependencies for jsony@1.1.5
-     Info:  Dependency on itertools@0.4.0 already satisfied
-  Verifying dependencies for itertools@0.4.0
-  Success:  The lock file is updated.
-
-Here are the changes in the nimble.lock file:
-
---- a/nimble.lock
-+++ b/nimble.lock
-@@ -12,13 +12,13 @@
-       }
-     },
-     "itertools": {
--      "version": "0.3.0",
--      "vcsRevision": "b0f6bb887c39bc7730f45abb72f7e9edd4714a66",
-+      "version": "0.4.0",
-+      "vcsRevision": "06c4de8b6b124368be269b00ecd0b34a3731739f",
-       "url": "https://github.com/narimiran/itertools",
-       "downloadMethod": "git",
-       "dependencies": [],
-       "checksums": {
--        "sha1": "adaadfebd990a33d5e25df2fd0ce45a762af1003"
-+        "sha1": "e98b828dbee752fb6f22cb3fe9fd00c13a2514f5"
-       }
-     },
-     "jsony": {
-
-Running nimble check confirms everything is synchronized:
-
-$
- nimble check
-  Success:  The package "myPackage" is valid.
-
-We can now commit the changes in myPackage.nimble and nimble.lock files, so that our package uses updated dependencies and other developers are able to use the exact versions as we are running locally.
-
-If you are that "other developer" who is also working on the same package with your own develop-mode dependencies, and the package is updated by your colleague in the way described above, after you run git pull you will also need to run nimble sync to get synchronize the new version of the lockfile and your local dependencies.
-September 14, 2026
-Made with Material for MkDocs
-
-
-Skip to content
-Nimble User Guide
-Nimble package types
-Type to start searching
-logo
-Nimble User Guide
-nim-lang/nimble
-
-    v0.24.1
-    1.4k
-    210
-
-    Home
-    Home
-        Nimble User Guide
-        Installing Nimble
-        Installing Nim
-    Use existing packages
-    Use existing packages
-        Use existing Nimble packages
-    Create Nimble packages
-    Create Nimble packages
-        Creating Nimble packages
-    Nimble develop workflow
-    Nimble develop workflow
-        Nimble develop workflow
-    Misc
-    Misc
-        Nimble package types
-        Table of contents
-            Libraries
-            Binary packages
-            Hybrids
-        Configuration
-        .nimble file reference
-        Nimble's folder structure and packages
-        Troubleshooting
-
-Nimble package types
-
-When running nimble init wizard, you will have three different package types to choose from. Here are their specifications and differences.
-Libraries
-
-Library packages are likely the most popular form of Nimble packages. They are meant to be used by other library or binary packages.
-
-When Nimble installs a library, it will copy all of its files into $nimbleDir/pkgs2/pkgname-ver-checksum. It's up to the package creator to make sure that the package directory layout is correct, this is so that users of the package can correctly import the package.
-
-It is suggested that the layout be as follows. The directory layout is determined by the nature of your package, that is, whether your package exposes only one module or multiple modules.
-
-If your package exposes only a single module, then that module should be present in the source directory of your Git repository and should be named whatever your package's name is. A good example of this is the jester package which exposes the jester module. In this case, the jester package is imported with import jester.
-
-If your package exposes multiple modules then the modules should be in a PackageName directory. This will allow for a certain measure of isolation from other packages which expose modules with the same names. In this case, the package's modules will be imported with import PackageName/module.
-
-Here's a simple example multi-module library package called kool:
-
-.
-├── kool
-│   ├── useful.nim
-│   └── also_useful.nim
-└── kool.nimble
-
-In regards to modules which you do not wish to be exposed. You should place them in a PackageName/private directory. Your modules may then import these private modules with import PackageName/private/module. This directory structure may be enforced in the future.
-
-All files and folders in the directory where the .nimble file resides will be copied as-is. You can however skip some directories or files by setting the skipDirs, skipFiles or skipExt options in your .nimble file. Directories and files can also be specified on a whitelist basis. If you specify either of installDirs, installFiles or installExt, then Nimble will only install the files specified.
-Binary packages
-
-These are application packages which require building prior to installation. A package is automatically a binary package as soon as it sets at least one bin value, like so:
-
-bin = @["main"]
-
-In this case when nimble install is invoked, Nimble will build the main.nim file, copy it into $nimbleDir/pkgs2/pkgname-ver-checksum/ and subsequently create a symlink to the binary in $nimbleDir/bin/. On Windows, a stub .cmd file is created instead.
-
-The binary can be named differently than the source file with the namedBin table:
-
-namedBin["main"] = "mymain"
-namedBin = {"main": "mymain", "main2": "other-main"}.toTable()
-
-Note that namedBin entries override duplicates in bin.
-
-Dependencies are automatically installed before building. It's a good idea to test that the dependencies you specified are correct by running nimble build or nimble install in the directory of your package.
-Hybrids
-
-Binary packages will not install .nim files so include installExt = @["nim"] in your .nimble file if you intend for your package to be a hybrid binary/library combo.
-
-Historically, binaries that shared the name of a pkgname directory that contains additional .nim files required workarounds. This is now handled behind the scenes by appending an .out extension to the binary and is transparent to commands like nimble run or symlinks which can still refer to the original binary name.
-September 14, 2026
-Made with Material for MkDocs
 
 
 NimScript
@@ -14649,511 +13319,1272 @@ Again, if you are wrapping a library which mallocs and frees data structures, yo
 Made with Nim. Generated: 2026-09-08 04:33:41 UTC
 
 
-Hot code reloading
+Skip to content
+logo
+Nimble User Guide
+Nimble User Guide
+Type to start searching
+nim-lang/nimble
 
-The hotCodeReloading option enables special compilation mode where changes in the code can be applied automatically to a running program. The code reloading happens at the granularity of an individual module. When a module is reloaded, any newly added global variables will be initialized, but all other top-level code appearing in the module won't be re-executed and the state of all existing global variables will be preserved.
-Basic workflow
+    v0.24.1
+    1.4k
+    210
 
-Currently, hot code reloading does not work for the main module itself, so we have to use a helper module where the major logic we want to change during development resides.
+    Home
+    Use existing packages
+    Create Nimble packages
+    Nimble develop workflow
+    Misc
 
-In this example, we use SDL2 to create a window and we reload the logic code when F9 is pressed. The important lines are marked with #***. To install SDL2 you can use nimble install sdl2.
+    Home
+        Nimble User Guide
+            Install Nimble
+            System Requirements
+            Automatic Nim Version Management
+                How It Works
+                Benefits
+                Using System Nim
+            Getting Started
+        Installing Nimble
+        Installing Nim
 
-# logic.nim
-import sdl2
+Nimble User Guide
 
-#*** import the hotcodereloading stdlib module ***
-import std/hotcodereloading
+Nimble is the default package manager for the Nim programming language.
 
-var runGame*: bool = true
-var window: WindowPtr
-var renderer: RendererPtr
-var evt = sdl2.defaultEvent
+It can search for Nim packages, install dependencies, create new packages and upload them to the official package list (see nimble.directory), and much more.
+Install Nimble
 
-proc init*() =
-  discard sdl2.init(INIT_EVERYTHING)
-  window = createWindow("testing", SDL_WINDOWPOS_UNDEFINED.cint, SDL_WINDOWPOS_UNDEFINED.cint, 640, 480, 0'u32)
-  assert(window != nil, $sdl2.getError())
-  renderer = createRenderer(window, -1, RENDERER_SOFTWARE)
-  assert(renderer != nil, $sdl2.getError())
+Nimble is bundled with Nim. This means that you should have Nimble installed already, as long as you have the latest version of Nim installed as well. Because of this, it is very likely that you do not need to install Nimble manually.
 
-proc destroy*() =
-  destroyRenderer(renderer)
-  destroyWindow(window)
+In case you still want to install Nimble manually, you can follow these installation instructions.
+System Requirements
 
-var posX: cint = 1
-var posY: cint = 0
-var dX: cint = 1
-var dY: cint = 1
+Nimble has some runtime dependencies on external tools, these tools are used to download Nimble packages. For instance, if a package is hosted on GitHub, you need to have git installed and added to your environment PATH. The same goes for Mercurial repositories. Nimble packages are typically hosted in Git repositories so you may be able to get away without installing Mercurial.
 
-proc update*() =
-  while pollEvent(evt):
-    if evt.kind == QuitEvent:
-      runGame = false
-      break
-    if evt.kind == KeyDown:
-      if evt.key.keysym.scancode == SDL_SCANCODE_ESCAPE: runGame = false
-      elif evt.key.keysym.scancode == SDL_SCANCODE_F9:
-        #*** reload this logic.nim module on the F9 keypress ***
-        performCodeReload()
-  
-  # draw a bouncing rectangle:
-  posX += dX
-  posY += dY
-  
-  if posX >= 640: dX = -2
-  if posX <= 0: dX = +2
-  if posY >= 480: dY = -2
-  if posY <= 0: dY = +2
-  
-  discard renderer.setDrawColor(0, 0, 255, 255)
-  discard renderer.clear()
-  discard renderer.setDrawColor(255, 128, 128, 0)
-  
-  var rect: Rect = (x: posX - 25, y: posY - 25, w: 50.cint, h: 50.cint)
-  discard renderer.fillRect(rect)
-  delay(16)
-  renderer.present()
+Warning
 
-# mymain.nim
-import logic
+Ensure that you have a fairly recent version of Git installed. Current minimal supported version is Git 2.22 from 2019-06-07.
+Automatic Nim Version Management
 
-proc main() =
-  init()
-  while runGame:
-    update()
-  destroy()
+Nimble can automatically download and manage Nim versions for your projects. This feature ensures that each project uses the correct Nim version without manual intervention.
+How It Works
 
-main()
+When you run Nimble commands like build or install:
 
-Compile this example via:
+    Nimble checks your project's Nim requirement specified in the .nimble file (e.g., requires "nim >= 2.0.0")
+    If a compatible Nim is not available, Nimble automatically downloads a prebuilt binary from nim-lang.org
+    The downloaded Nim is cached in ~/.nimble/nim/ and reused for future builds
 
-nim c --hotcodereloading:on mymain.nim
+Benefits
 
-Now start the program and KEEP it running!
+    No manual Nim installation required - Just install Nimble and start building
+    Per-project Nim versions - Different projects can use different Nim versions
+    Lock file support - The exact Nim version can be pinned in nimble.lock
+    Automatic updates - When a project requires a newer Nim, it's downloaded automatically
 
-# Unix:
-mymain &
-# or Windows (click on the .exe)
-mymain.exe
-# edit
+Using System Nim
 
-For example, change the line:
+Nimble will always try to match your system Nim version against the project's requirements. The --useSystemNim flag is used to bypass stricter constraints when you want to force the use of your locally installed Nim:
 
-discard renderer.setDrawColor(255, 128, 128, 0)
+nimble
+ build --useSystemNim
 
-into:
+This is useful when:
 
-discard renderer.setDrawColor(255, 255, 128, 0)
+    You have a custom Nim build
+    You're working offline and already have Nim installed
+    You want to test with a specific Nim version not available as a binary
 
-(This will change the color of the rectangle.)
+Getting Started
 
-Then recompile the project, but do not restart or quit the mymain.exe program!
+    If you wish to explore existing Nim packages and install some of them, follow the using packages guide.
 
-nim c --hotcodereloading:on mymain.nim
+    If you would like to create your own Nimble package, the create Nimble packages guide is for you.
 
-Now give the mymain SDL window the focus, press F9, and watch the updated version of the program.
-Reloading API
+    To learn more about how to use the new workflow with nimble develop, follow the Nimble develop guide.
 
-One can use the special event handlers beforeCodeReload and afterCodeReload to reset the state of a particular variable or to force the execution of certain statements:
-
-var
- settings = initTable[string, string]()
- lastReload: Time
-
-for k, v in loadSettings():
-  settings[k] = v
-
-initProgram()
-
-afterCodeReload:
-  lastReload = now()
-  resetProgramState()
-
-On each code reload, Nim will first execute all beforeCodeReload handlers registered in the previous version of the program and then all afterCodeReload handlers appearing in the newly loaded code. Please note that any handlers appearing in modules that weren't reloaded will also be executed. To prevent this behavior, one can guard the code with the hasModuleChanged() API:
-
-import mydb
-
-var myCache = initTable[Key, Value]()
-
-afterCodeReload:
-  if hasModuleChanged(mydb):
-    resetCache(myCache)
-
-The hot code reloading is based on dynamic library hot swapping in the native targets and direct manipulation of the global namespace in the JavaScript target. The Nim compiler does not specify the mechanism for detecting the conditions when the code must be reloaded. Instead, the program code is expected to call performCodeReload() every time it wishes to reload its code.
-
-It's expected that most projects will implement the reloading with a suitable build-system triggered IPC notification mechanism, but a polling solution is also possible through the provided hasAnyModuleChanged() API.
-
-In order to access beforeCodeReload, afterCodeReload, hasModuleChanged or hasAnyModuleChanged one must import the hotcodereloading module.
-Native code targets
-
-Native projects using the hot code reloading option will be implicitly compiled with the -d:useNimRtl option and they will depend on both the nimrtl library and the nimhcr library which implements the hot code reloading run-time. Both libraries can be found in the lib folder of Nim and can be compiled into dynamic libraries to satisfy runtime demands of the example code above. An example of compiling nimhcr.nim and nimrtl.nim when the source dir of Nim is installed with choosenim follows.
-
-# Unix/MacOS
-# Make sure you are in the directory containing your .nim files
-$ cd your-source-directory
-
-# Compile two required files and set their output directory to current dir
-$ nim c --outdir:$PWD ~/.choosenim/toolchains/nim-#devel/lib/nimhcr.nim
-$ nim c --outdir:$PWD ~/.choosenim/toolchains/nim-#devel/lib/nimrtl.nim
-
-# verify that you have two files named libnimhcr and libnimrtl in your
-# source directory (.dll for Windows, .so for Unix, .dylib for MacOS)
-
-All modules of the project will be compiled to separate dynamic link libraries placed in the nimcache directory. Please note that during the execution of the program, the hot code reloading run-time will load only copies of these libraries in order to not interfere with any newly issued build commands.
-
-The main module of the program is considered non-reloadable. Please note that procs from reloadable modules should not appear in the call stack of program while performCodeReload is being called. Thus, the main module is a suitable place for implementing a program loop capable of calling performCodeReload.
-
-Please note that reloading won't be possible when any of the type definitions in the program has been changed. When closure iterators are used (directly or through async code), the reloaded definitions will affect only newly created instances. Existing iterator instances will execute their original code to completion.
-JavaScript target
-
-Once your code is compiled for hot reloading, a convenient solution for implementing the actual reloading in the browser using a framework such as LiveReload or BrowserSync.
-
-Made with Nim. Generated: 2026-09-08 04:33:43 UTC
+September 14, 2026
+Made with Material for MkDocs
 
 
-Testament
-Theme: 
+Skip to content
+logo
+Nimble User Guide
+Use existing Nimble packages
+Type to start searching
+nim-lang/nimble
 
-    Manual
-    Standard library
-    Index
-    Compiler docs
-    Fusion docs
-    devel, stable
+    v0.24.1
+    1.4k
+    210
 
-Search:
-Group by:
+    Home
+    Use existing packages
+    Create Nimble packages
+    Nimble develop workflow
+    Misc
 
-    Test files location
-    Commands
-    Options
-    Running a single test
-    Running all tests from a directory
-    HTML Reports
-    Writing Unit tests
-        Inline hints, warnings and errors (notes)
-        Output message variable interpolation
-        Cmd variable interpolation
-    Unit test Examples
+    Use existing packages
+        Use existing Nimble packages
+            nimble install
+                Installing a specific version
+                Package URLs
+                Local Package Development
+            nimble list
+            nimble search
+                nimble.directory
+            nimble uninstall
+            nimble lock
+            nimble refresh
+            nimble deps
+                Options
+            nimble path
 
-Source   Edit  
+Use existing Nimble packages
 
-Testament is an advanced automatic unittests runner for Nim tests, is used for the development of Nim itself, offers process isolation for your tests, it can generate statistics about test cases, supports multiple targets (C, C++, ObjectiveC, JavaScript, etc.), simulated Dry-Runs, has logging, can generate HTML reports, skip tests from a file, and more, so can be useful to run your tests, even the most complex ones.
-Test files location
+While Nim has a relatively large standard library, chances are that at some point you will want to use some 3rd party library. In the following sections, we will show you the most used nimble commands for that purpose.
+nimble install
 
-By default, Testament looks for test files on "./tests/category/*.nim". You can overwrite this pattern glob using pattern <glob>. The default working directory path can be changed using --directory:"folder/subfolder/".
+The install command will download and install a package. You need to pass the name of the package (or packages) you want to install. If any of the packages depend on other Nimble packages Nimble will also install them. Example:
 
-Testament uses the nim compiler on PATH. You can change that using --nim:"folder/subfolder/nim". Running JavaScript tests with --targets:"js" requires a working NodeJS on PATH.
-Commands
-p|pat|pattern <glob>	run all the tests matching the given pattern
-all	run all tests inside of category folders
-c|cat|category <category>	run all the tests of a certain category
-r|run <test>	run single test file
-html	generate testresults.html from the database
+$
+ nimble install nake
+Downloading
+ https://github.com/fowlmouth/nake using git
+      ...
+  Success:  nake installed successfully.
+
+Nimble always fetches and installs the latest version of a package. Note that the latest version is defined as the latest tagged version in the Git (or Mercurial) repository. If the package has no tagged versions then the latest commit in the remote repository will be installed. If you already have that version installed, Nimble will ask you whether you wish to overwrite your local copy.
+Installing a specific version
+
+You can force Nimble to download the latest commit from the package's repo, for example:
+
+$ nimble install nimgame@#head
+
+This is of course Git-specific, for Mercurial, use tip instead of head. A branch, tag, or commit hash may also be specified in the place of head.
+
+Instead of specifying a VCS branch, you may also specify a concrete version or a version range, for example:
+
+$ nimble install nimgame@0.5
+$ nimble install nimgame@"> 0.5"
+
+The following version selector operators are available:
+Operator 	Meaning
+== 	Install the exact version.
+> 	Install higher version.
+< 	Install lower version.
+>= 	Install at least the provided version.
+<= 	Install at most the provided version.
+^= 	Install the latest compatible version according to semver.
+~= 	Install the latest version by increasing the last given digit
+to the highest version. 	
+
+Nim flags provided to nimble install will be forwarded to the compiler when building any binaries. Such compiler flags can be made persistent by using Nim configuration files.
+Package URLs
+
+A valid URL to a Git or Mercurial repository can also be specified, Nimble will automatically detect the type of the repository that the url points to and install it. This way, the packages which are not in the official package list can be installed.
+
+For repositories containing the Nimble package in a subdirectory, you can instruct Nimble about the location of your package using the ?subdir=<path> query parameter. For example:
+
+$ nimble install https://github.com/nimble-test/multi?subdir=alpha
+
+Local Package Development
+
+The install command can also be used for locally testing or developing a Nimble package by leaving out the package name parameter. Your current working directory must be a Nimble package and contain a valid package.nimble file.
+
+Nimble will install the package residing in the current working directory when you don't specify a package name and the directory contains a package.nimble file. This can be useful for developers who are locally testing their .nimble files before submitting them to the official package list. See the Create Packages guide for more info on this.
+
+Dependencies required for developing or testing a project can be installed by passing --depsOnly without specifying a package name. Nimble will then install any missing dependencies listed in the package's package.nimble file in the current working directory. Note that dependencies will be installed globally.
+
+For example to install the dependencies for a Nimble project myPackage:
+
+$ cd myPackage
+$ nimble install --depsOnly
+
+nimble list
+
+If you want to list all available packages, you can use nimble list, but beware: it is a very long (and not very useful) list.
+
+Naming one or more packages restricts the output to those packages:
+
+$ nimble list chronos
+
+chronos:
+  url:         https://github.com/status-im/nim-chronos (git)
+  tags:        library, networking, async, asynchronous, eventloop, timers, sendfile, tcp, udp
+  description: An efficient library for asynchronous programming
+  license:     Apache License 2.0
+  website:     https://github.com/status-im/nim-chronos
+
+The name has to match a known package exactly, though the comparison is case insensitive. Nimble exits with an error if it does not know the package; use nimble search (explained below) to look for packages by name fragment or tag instead.
+
+Add --ver to also query the package's repository for the versions it has tagged:
+
+$ nimble list chronos --ver
+
+chronos:
+  url:         https://github.com/status-im/nim-chronos (git)
+  ...
+  versions:    v4.4.0, v4.2.4, v4.2.3, v4.2.2, v4.2.0, v4.0.7, ...
+
+Because --ver contacts each matching package's repository, it is worth naming the packages you care about. nimble list --ver on its own queries every package Nimble knows about, one at a time.
+
+A name may carry a version range, spelled exactly as it would be in a requires line, to narrow the versions reported. Giving a range implies --ver:
+
+$ nimble list "chronos >= 4.0.4"
+
+chronos:
+  url:         https://github.com/status-im/nim-chronos (git)
+  ...
+  versions:    v4.4.0, v4.2.4, v4.2.3, v4.2.2, v4.2.0, v4.0.7, v4.0.6, v4.0.5, v4.0.4
+
+Quote the argument so the shell keeps it as one word. Any range accepted in a requires line works, including == 4.2.0 and >= 4.0.0 & < 4.3.0. A range that matches nothing is not an error — the package is still listed, with a note in place of the versions:
+
+$ nimble list "chronos >= 99"
+
+chronos:
+  ...
+  versions:    (No tagged versions match >= 99)
+
+Only tagged releases are matched, so a special version such as chronos#head reports no matches: #head is a branch, not a tag.
+
+If you want to see a list of locally installed packages and their versions, use --installed, or -i for short:
+
+$ nimble list -i
+
+This also accepts package names and version ranges, so nimble list -i chronos reports just the installed copies of chronos, and nimble list -i "chronos >= 4.0.4" narrows that to the installed versions in range.
+nimble search
+
+If you don't want to go through the whole output of the list command you can use the search command specifying as parameters the package name and/or tags you want to filter. Nimble will look into the known list of available packages and display only those that match the specified keywords (which can be substrings). Example:
+
+$ nimble search math
+
+linagl:
+url:         https://bitbucket.org/BitPuffin/linagl (hg)
+tags:        library, opengl, math, game
+description: OpenGL math library
+license:     CC0
+website:     https://bitbucket.org/BitPuffin/linagl
+
+extmath:
+url:         git://github.com/achesak/extmath.nim (git)
+tags:        library, math, trigonometry
+description: Nim math library
+license:     MIT
+website:     https://github.com/achesak/extmath.nim
+
+glm:
+url:         https://github.com/stavenko/nim-glm (git)
+tags:        opengl, math, matrix, vector, glsl
+description: Port of c++ glm library with shader-like syntax
+license:     MIT
+website:     https://github.com/stavenko/nim-glm
+
+...
+
+Searches are case insensitive.
+
+An optional --ver parameter can be specified to tell Nimble to query remote Git repositories for the list of versions of the packages and then print the versions. However, please note that this can be slow as each package must be queried separately.
+nimble.directory
+
+As an alternative for nimble search command, you can use Nimble Directory website to search for packages.
+nimble uninstall
+
+The uninstall command will remove an installed package.
+
+Warning
+
+Attempting to remove a package that other packages depend on will result in an error.
+
+You can use the --inclDeps or -i flag to remove all dependent packages along with the package.
+
+Similar to the install command you can specify a version range, for example:
+
+$ nimble uninstall nimgame@0.5
+
+nimble lock
+
+The lock command generates or updates a package lock file. On its own it keeps every pin it already has, only re-solving when a package's requirements changed:
+
+$
+ nimble lock
+
+Two things ask it to move a pin, and they combine.
+
+Naming packages relocks those and leaves the rest of the file alone:
+
+$
+ nimble lock chronos
+
+--refresh resolves against the package repositories instead of the cached version information, so versions published since the last lock are picked up. With no package named it relocks everything to the newest available:
+
+$
+ nimble lock --refresh          # everything, to the newest published
+$
+ nimble lock --refresh chronos  # just chronos, to the newest published
+
+The distinction matters because lock normally resolves from Nimble's version cache. Without --refresh, nimble lock chronos moves chronos only as far as the newest version Nimble already knows about, which may be older than what upstream has published.
+
+nimble upgrade is a deprecated alias of lock --refresh; it still works but prints a warning.
+nimble refresh
+
+The refresh command is used to fetch and update the list of Nimble packages. There is no automatic update mechanism, so you need to run this yourself if you need to refresh your local list of known available Nimble packages. Example:
+
+$
+ nimble refresh
+    Copying local package list
+    Success Package list copied.
+Downloading
+ Official package list
+    Success Package list downloaded.
+
+Package lists can be specified in Nimble's config. You can also optionally supply this command with a URL if you would like to use a third-party package list.
+
+Some commands may remind you to run nimble refresh or will run it for you if they fail.
+
+Refreshing the package list only tells Nimble which packages exist. To also learn which versions of them exist, refresh goes on to fetch the repositories behind the packages it knows about and reports the newer versions that became visible:
+
+$
+ nimble refresh
+Downloading
+ Official package list
+    Success Package list downloaded.
+  Refreshed 3 dependencies of myproject
+      Info: Newer versions available:
+              chronos 4.0.3 -> 4.0.4
+
+Which packages that covers depends on where you run it:
+
+    Inside a package — its dependencies, including transitive ones. Any develop dependency with a clean working copy is also moved to its newest tag; one with uncommitted changes is reported and left untouched.
+    Outside a package, or with -g / --global — every package Nimble knows about globally: those installed in the global package directory, plus every package already in its version cache.
+
+nimble refresh only updates what Nimble knows is available. It picks no versions, writes no lock file and installs nothing, so it is safe to run at any time; use nimble install or nimble lock --refresh afterwards to actually act on what it found.
+
+Other commands resolve against that cached version information rather than the repositories, which is why a freshly published version can stay invisible to them until the cache is updated. Pass --refresh to any of them to resolve against the repositories instead:
+
+$
+ nimble install --refresh   # also works with lock, upgrade, build, ...
+
+Since it contacts every relevant repository, a global refresh can take a while. It fetches several of them at a time and reports its progress as it goes; pass --sync to fetch them one by one instead. To skip it entirely and update only the package list, use --packageListOnly:
+
+$
+ nimble refresh --packageListOnly
+
+nimble deps
+
+The nimble deps command displays the dependency tree of the current package. It shows all direct and transitive dependencies along with their version requirements and resolved versions.
+
+$
+ nimble deps
+
+The output format is:
+
+{PackageName} {Requirements} (@{Resolved Version})
+
+For example:
+
+mypackage (@1.0.0)
+├── jester @>= 0.5.0 (@0.6.0)
+│   └── httpbeast @>= 0.4.0 (@0.4.1)
+└── chronicles @any (@0.10.3)
+
 Options
---print
-print results to the console
---verbose
-print commands (compiling and running tests)
---simulate
-see what tests would be run but don't run them (for debugging)
---failing
-only show failing/ignored tests
---targets:"c cpp js objc"
-run tests for specified targets (default: c)
---nim:path
-use a particular nim executable (default: $PATH/nim)
---directory:dir
-Change to directory dir before reading the tests or doing anything else.
---colors:on|off
-Turn messages coloring on|off.
---backendLogging:on|off
-Disable or enable backend logging. By default turned on.
---megatest:on|off
-Enable or disable megatest. Default is on.
---valgrind:on|off
-Enable or disable valgrind support. Default is on.
---skipFrom:file
-Read tests to skip from file - one test per line, # comments ignored
-Running a single test
 
-This is a minimal example to understand the basics, not very useful for production, but easy to understand:
+    --format:json - Output the dependency tree in JSON format for programmatic use.
+    -i or --inverted - Show an inverted dependency tree where each package lists which packages depend on it.
+    -d or --direct - Show only direct dependencies (no transitive dependencies).
 
-$ mkdir -p tests/category
-$ echo "assert 42 == 42" > tests/category/test0.nim
-$ testament run tests/category/test0.nim
-PASS: tests/category/test0.nim c                           ( 0.2 sec)
-$ testament r tests/category/test0
-PASS: tests/category/test0.nim C                           ( 0.2 sec)
+nimble path
 
-Running all tests from a directory
+The nimble path command will show the absolute path to the installed packages matching the specified parameters. Since there can be many versions of the same package installed, this command will list all of them, for example:
 
-This will run all tests in the top level tests/ directory. NOTE: these tests are skipped by testament all.
+$
+ nimble path itertools
+/home/user/.nimble/pkgs2/itertools-0.4.0-5a3514a97e4ff2f6ca4f9fab264b3be765527c7f
+/home/user/.nimble/pkgs2/itertools-0.2.0-ab2eac22ebda6512d830568bfd3052928c8fa2b9
 
-$ testament pattern "tests/*.nim"
-
-To search for tests deeper in a directory, use
-
-$ testament pattern "tests/**/*.nim"    # one level deeper
-$ testament pattern "tests/**/**/*.nim" # two levels deeper
-
-HTML Reports
-
-Generate HTML Reports testresults.html from unittests, you have to run at least 1 test before generating a report:
-
-$ testament html
-
-Writing Unit tests
-
-Example "template" to edit and write a Testament unittest:
-
-discard """
-  
-  # What actions to expect completion on.
-  # Options:
-  #   "compile": expect successful compilation
-  #   "run": expect successful compilation and execution
-  #   "reject": expect failed compilation. The "reject" action can catch
-  #             {.error.} pragmas but not {.fatal.} pragmas because
-  #             {.error.} calls are expected to originate from the test-file,
-  #             and can explicitly be specified using the "file", "line" and
-  #             "column" options.
-  #             {.fatal.} pragmas guarantee that compilation will be aborted.
-  action: "run"
-  
-  # For testing failed compilations you can specify the expected origin of the
-  # compilation error.
-  # With the "file", "line" and "column" options you can define the file,
-  # line and column that a compilation-error should have originated from.
-  # Use only with action: "reject" as it expects a failed compilation.
-  # Requires errormsg or msg to be defined.
-  # file: ""
-  # line: ""
-  # column: ""
-  
-  # The exit code that the test is expected to return. Typically, the default
-  # value of 0 is fine. Note that if the test will be run by valgrind, then
-  # the test will exit with either a code of 0 on success or 1 on failure.
-  exitcode: 0
-  
-  # Provide an `output` string to assert that the test prints to standard out
-  # exactly the expected string. Provide an `outputsub` string to assert that
-  # the string given here is a substring of the standard out output of the
-  # test (the output includes both the compiler and test execution output).
-  output: ""
-  outputsub: ""
-  
-  # Whether to sort the compiler output lines before comparing them to the
-  # expected output.
-  sortoutput: true
-  
-  # Provide a `nimout` string to assert that the compiler during compilation
-  # prints the defined lines to the standard out.
-  # The lines must match in order, but there may be more lines that appear
-  # before, after, or in between them.
-  nimout: '''
-a very long,
-multi-line
-string'''
-  
-  # This is the Standard Input the test should take, if any.
-  input: ""
-  
-  # Error message the test should print, if any.
-  errormsg: ""
-  
-  # Can be run in batch mode, or not.
-  batchable: true
-  
-  # Can be run Joined with other tests to run all together, or not.
-  joinable: true
-  
-  # On Linux 64-bit machines, whether to use Valgrind to check for bad memory
-  # accesses or memory leaks. On other architectures, the test will be run
-  # as-is, without Valgrind.
-  # Options:
-  #   true: run the test with Valgrind
-  #   false: run the without Valgrind
-  #   "leaks": run the test with Valgrind, but do not check for memory leaks
-  valgrind: false   # Can use Valgrind to check for memory leaks, or not (Linux 64Bit only).
-  
-  # Checks that the specified piece of C-code is within the generated C-code.
-  ccodecheck: "'Assert error message'"
-  
-  # Command the test should use to run. If left out or an empty string is
-  # provided, the command is taken to be:
-  # "nim $target --hints:on -d:testing --nimblePath:build/deps/pkgs $options $file"
-  # Subject to variable interpolation.
-  cmd: "nim c -r $file"
-  
-  # Maximum generated temporary intermediate code file size for the test.
-  maxcodesize: 666
-  
-  # Timeout seconds to run the test. Fractional values are supported.
-  timeout: 1.5
-  
-  # Targets to run the test into (c, cpp, objc, js). Defaults to c.
-  targets: "c js"
-  
-  # flags with which to run the test, delimited by `;`
-  matrix: "; -d:release; -d:caseFoo -d:release"
-  
-  # Conditions that will skip this test. Use of multiple "disabled" clauses
-  # is permitted.
-  disabled: "bsd"   # Can disable OSes...
-  disabled: "win"
-  disabled: "32bit" # ...or architectures
-  disabled: "i386"
-  disabled: "azure" # ...or pipeline runners
-  disabled: true    # ...or can disable the test entirely
-
-"""
-assert true
-assert 42 == 42, "Assert error message"
-
-    As you can see the "Spec" is just a discard """ """.
-    Spec has sane defaults, so you don't need to provide them all, any simple assert will work just fine.
-    This is not the full spec of Testament, check the Testament Spec on GitHub, see parseSpec().
-    Nim itself uses Testament, so there are plenty of test examples.
-    Has some built-in CI compatibility, like Azure Pipelines, etc.
-
-Inline hints, warnings and errors (notes)
-
-Testing the line, column, kind and message of hints, warnings and errors can be written inline like so:
-
-{.warning: "warning!!"} #[tt.Warning
-         ^ warning!! [User] ]#
-
-The opening #[tt. marks the message line. The ^ marks the message column.
-
-Inline messages can be combined with nimout when nimoutFull is false (default). This allows testing for expected messages from other modules:
-
-discard """
-  nimout: "config.nims(1, 1) Hint: some hint message [User]"
-"""
-{.warning: "warning!!"} #[tt.Warning
-         ^ warning!! [User] ]#
-
-Multiple messages for a line can be checked by delimiting messages with ';':
-
-discard """
-  matrix: "--errorMax:0 --styleCheck:error"
-"""
-
-proc generic_proc*[T](a_a: int) = #[tt.Error
-     ^ 'generic_proc' should be: 'genericProc'; tt.Error
-                      ^ 'a_a' should be: 'aA' ]#
-  discard
-
-Use --errorMax:0 in matrix, or cmd: "nim check $file" when testing for multiple 'Error' messages.
-Output message variable interpolation
-
-errormsg, nimout, and inline messages are subject to these variable interpolations:
-
-    ${/} - platform's directory separator
-    $file - the filename (without directory) of the test
-
-All other $ characters need escaped as $$.
-Cmd variable interpolation
-
-The cmd option is subject to these variable interpolations:
-
-    $target - the compilation target, e.g. c.
-    $options - the options for the compiler.
-    $file - the file path of the test.
-    $filedir - the directory of the test file.
-
-discard """
-  cmd: "nim $target --nimblePath:./nimbleDir/simplePkgs $options $file"
-"""
-
-All other $ characters need escaped as $$.
-Unit test Examples
-
-Expected to fail:
-
-discard """
-  errormsg: "undeclared identifier: 'not_defined'"
-"""
-assert not_defined == "not_defined", "not_defined is not defined"
-
-Expected to fail with error thrown from another file:
-
-# test.nim
-discard """
-  action: "reject"
-  errorMsg: "I break"
-  file: "breakPragma.nim"
-"""
-import ./breakPragma
-
-proc x() {.justDo.} = discard
-
-# breakPragma.nim
-import std/macros
-
-macro justDo*(procDef: typed): untyped =
-  error("I break")
-  return procDef
-
-Expecting generated C to contain a given piece of code:
-
-discard """
-  # Checks that the string "Assert error message" is in the generated
-  # C code.
-  ccodecheck: "'Assert error message'"
-"""
-assert 42 == 42, "Assert error message"
-
-Non-Zero exit code:
-
-discard """
-  exitcode: 1
-"""
-quit "Non-Zero exit code", 1
-
-Standard output checking:
-
-discard """
-  
-  output: '''
-0
-1
-2
-3
-4
-5
-'''
-
-"""
-for i in 0..5: echo i
-
-JavaScript tests:
-
-discard """
-  targets: "js"
-"""
-when defined(js):
-  import std/jsconsole
-  console.log("My Frontend Project")
-
-Compile-time tests:
-
-discard """
-  action: "compile"
-"""
-static: assert 9 == 9, "Compile time assert"
-
-Tests without Spec:
-
-assert 1 == 1
-
-See also:
-
-    Unittest
+September 14, 2026
+Made with Material for MkDocs
 
 
-Made with Nim. Generated: 2026-09-08 04:34:11 UTC
+Skip to content
+logo
+Nimble User Guide
+Creating Nimble packages
+Type to start searching
+nim-lang/nimble
+
+    v0.24.1
+    1.4k
+    210
+
+    Home
+    Use existing packages
+    Create Nimble packages
+    Nimble develop workflow
+    Misc
+
+    Create Nimble packages
+        Creating Nimble packages
+            nimble init
+            Project structure
+            .nimble file
+                Dependencies
+                NimScript compatibility
+                Declarative Parser (Experimental)
+                Features (Experimental)
+                    Checking Active Features in Code
+                The dev Feature
+                nimble tasks
+            nimble test
+            nimble c
+            nimble build
+            nimble run
+            nimble check
+            nimble install
+            nimble dump
+            nimble publish
+                Releasing a new version
+                    Git Version Tagging
+
+Creating Nimble packages
+
+In this guide you will find the information on how to create and publish new Nimble packages.
+nimble init
+
+The easiest and recommended way to start a new Nimble project is to run nimble init in the directory in which you want to create a package, and follow the steps in the wizard.
+
+$ nimble init
+      Info: Package initialisation requires info which could not be inferred.
+        ... Default values are shown in square brackets, press
+        ... enter to use them.
+      Using "myPackage" for new package name
+      Using username for new package author
+      Using "src" for new package source directory
+    Prompt: Package type?
+        ... Library - provides functionality for other packages.
+        ... Binary  - produces an executable for the end-user.
+        ... Hybrid  - combination of library and binary
+        ... For more information see https://nim-lang.github.io/nimble/package-types.html
+     Select Cycle with 'Tab', 'Enter' when done
+   Choices:> library <
+             binary  
+             hybrid  
+
+The first choice you have to make is the type of your package. The differences between those three options are outlined in this document.
+
+After that, the wizard asks you about the version number of your package (default: 0.1.0), a package description, a license you want to use and the lowest Nim version that your package is compatible with. You can press enter to use the provided default answer for each question.
+
+    Prompt: Initial version of package? [0.1.0]
+    Answer: 
+    Prompt: Package description? [A new awesome nimble package]
+    Answer: Check if a number is odd.         
+    Prompt: Package License?
+        ... This should ideally be a valid SPDX identifier. See https://spdx.org/licenses/.
+     Select Cycle with 'Tab', 'Enter' when done
+    Answer: MIT
+    Prompt: Lowest supported Nim version? [2.1.1]
+    Answer: 2.0.0
+   Success: Package myPackage created successfully
+
+After the wizard completes, the structure of your directory looks like this:
+
+.
+├── myPackage.nimble
+├── src
+│   ├── myPackage
+│   │   └── submodule.nim
+│   └── myPackage.nim
+└── tests
+    ├── config.nims
+    └── test1.nim
+
+The answers you provided are stored in the .nimble file:
+
+# Package
+
+version       = "0.1.0"
+author        = "username"
+description   = "Check if a number is odd."
+license       = "MIT"
+srcDir        = "src"
+
+
+# Dependencies
+
+requires "nim >= 2.0.0"
+
+Project structure
+
+For a package named foobar, the recommended project structure is the following:
+
+.
+                   # The root directory of the project
+├──
+ LICENSE
+├──
+ README.md
+├──
+ foobar.nimble   # The project .nimble file
+└──
+ src
+    └── foobar.nim  # Imported via `import foobar`
+└──
+ tests           # Contains the tests
+    ├── config.nims
+    ├── tfoo1.nim   # First test
+    └── tfoo2.nim   # Second test
+
+Note
+
+When source files are placed in a src directory, the .nimble file must contain a srcDir = "src" directive. The nimble init command takes care of that for you.
+
+When introducing more modules into your package, you should place them in a separate directory named foobar (i.e. your package's name). For example:
+
+.
+├──
+ ...
+├──
+ foobar.nimble
+├──
+ src
+│
+   ├── foobar
+│
+   │   ├── utils.nim   # Imported via `import foobar/utils`
+│
+   │   └── common.nim  # Imported via `import foobar/common`
+│
+   └── foobar.nim      # Imported via `import foobar`
+└──
+ ...
+
+You may wish to hide certain modules in your package from the users. Create a private directory for that purpose. For example:
+
+.
+├──
+ ...
+├──
+ foobar.nimble
+├──
+ src
+│
+   ├── foobar
+│
+   │   ├── private
+│
+   │   │   └── hidden.nim  # Imported via `import foobar/private/hidden`
+│
+   │   ├── utils.nim
+│
+   │   └── common.nim
+│
+   └── foobar.nim
+└──
+ ...
+
+.nimble file
+
+As seen above, running nimble init creates a basic .nimble file. It can be modified to add more dependencies and/or create custom tasks, etc.
+Dependencies
+
+If your package relies on other dependencies, you need to add them to the .nimble file. Nimble currently supports the installation of packages from a local directory, a Git repository and a mercurial repository.
+
+...
+
+# Dependencies
+
+requires "nim >= 2.0.0"
+requires "fizzbuzz == 1.0"
+requires "https://github.com/user/pkg#5a54b5e"
+requires "https://github.com/user/pkg >= 2.0.0"
+requires "foobar#head"
+
+Versions of cloned packages via Git or Mercurial are determined through the repository's tags. When installing a package that needs to be downloaded, Nimble will check the cloned repository's tags list.
+
+    If no tags exist, Nimble will simply install the HEAD of the repository.
+    If tags exist, Nimble will attempt to look for tags that resemble versions (e.g. v0.1) and will then find the latest version out of the available tags, once it does so it will install the package after checking out the latest version.
+
+You can force the installation of the HEAD of the repository by specifying #head after the package name in your dependency list.
+
+There are several version selector operators you can use:
+Operator 	Meaning
+== 	Install the exact version.
+> 	Install higher version.
+< 	Install lower version.
+>= 	Install at least the provided version.
+<= 	Install at most the provided version.
+^= 	Install the latest compatible version according to semver.
+~= 	Install the latest version by increasing the last given digit to the highest version.
+
+Here are some examples of the ^= and ~= operators:
+
+requires "nim ^= 1.2.2"    # nim >= 1.2.2 & < 2.0.0
+requires "nim ~= 1.2.2"    # nim >= 1.2.2 & < 1.3.0
+requires "jester ^= 0.4.1" # jester >= 0.4.1 & < 0.5.0
+requires "jester ~= 0.4.1" # jester >= 0.4.1 & < 0.5.0
+requires "jester ~= 0.4"   # jester >= 0.4.0 & < 1.0.0
+requires "choosenim ~= 0"  # choosenim >= 0.0.0 & < 1.0.0
+requires "choosenim ^= 0"  # choosenim >= 0.0.0 & < 1.0.0
+
+NimScript compatibility
+
+The .nimble file is very flexible because it is interpreted using NimScript.
+
+Because of Nim's flexibility, the definitions remain declarative, with the added ability to use the Nim language to enrich your package specification. For example, you can define dependencies for specific platforms using Nim's when statement:
+
+when defined(macosx):
+  requires "libcurl >= 1.0.0"
+
+when defined(windows):
+  requires "puppy 1.5.4"
+
+Declarative Parser (Experimental)
+
+Starting in nimble 0.18.0, the declarative parser can be used.
+It can be activated using the flag --parser:declarative and will become the default parser in the future.
+
+The main advantage of the declarative parser is deterministic dependencies, allowing nimble to build a reliable cache.
+Another benefit is improved speed, as there is no need to spin up the Nim VM for every dependency.
+Features (Experimental)
+
+To support conditional dependencies when using the declarative parser, the feature block can be used.
+
+For example, Nim has two async backends: std/asyncdispatch, which ships with Nim, and chronos.
+A library may support both, but ideally, chronos should not be included in dependency resolution when using asyncdispatch.
+This can be achieved as follows:
+
+feature "chronos":
+  requires "chronos"
+
+In this example, chronos will only be installed when the chronos feature is activated.
+
+There are two ways to activate a feature:
+
+    By passing a flag to the root package:
+
+    nimble
+     --features:chronos install
+
+    By activating it in a dependency using the [] operator:
+
+    requires "awesomeAsyncPackage[chronos]"
+
+Multiple features can be activated for a package as follows:
+
+requires "awesomeAsyncPackage[chronos, feature2]"
+
+Checking Active Features in Code
+
+In Nim code, you can check if a given feature is activated using the when operator:
+
+when defined(features.awesomeAsyncPackage.chronos):
+  import chronos
+
+The format follows: features.packageName.featureName.
+The dev Feature
+
+An implicit feature, dev, is always activated when developing a package.
+It is useful for requiring development-specific dependencies.
+
+For example:
+
+feature "dev":
+  requires "unittest2"
+
+Since the dev feature is used frequently, an alias is available:
+
+dev:
+  requires "unittest2"
+
+nimble tasks
+
+Another great feature of .nimble file is the ability to define custom Nimble package-specific commands:
+
+task hello, "This is a hello task":
+  echo "Hello World!"
+
+You can then execute nimble hello, which will result in the following output:
+
+$
+ nimble hello
+  Verifying dependencies for myPackage@0.1.0
+  Executing task hello in /home/username/myPackage/myPackage.nimble
+Hello
+ world
+
+You can also check what tasks are supported by the package in the current directory by using the nimble tasks command, for example:
+
+$
+ nimble tasks
+hello
+     This is a hello task
+
+You can place any Nim code inside these tasks, as long as that code does not access the FFI. The nimscript module in Nim's standard library defines additional functionality, such as the ability to execute external processes which makes this feature very powerful.
+
+Nimble provides an API that adds even more functionality. For example, you can specify pre- and post- hooks for any Nimble command (including commands that you define yourself). To do this you can add something like the following:
+
+before hello:
+  echo "About to call hello!"
+
+That will result in the following output when nimble hello is executed:
+
+$ nimble hello
+  Verifying dependencies for myPackage@0.1.0
+About to call hello!
+  Executing task hello in /home/username/myPackage/myPackage.nimble
+Hello world
+
+Similar to this, an after block is also available for post hooks, which are executed after Nimble finished executing a command. You can also return false from these blocks to stop further execution.
+
+Tasks support two kinds of flags: nimble <compflags> task <runflags>.
+
+Compile flags are those specified before the task name and are forwarded to the Nim compiler that runs the .nimble task. This enables setting --define:xxx values that can be checked with when defined(xxx) in the task, and other compiler flags that are applicable in Nimscript mode.
+
+Run flags are those after the task name and are available as command-line arguments to the task. They can be accessed as usual from commandLineParams: seq[string].
+
+In order to forward compiler flags to exec("nim ...") calls executed within a custom task, the user needs to specify these flags as run flags which will then need to be manually accessed and forwarded in the task.
+nimble test
+
+Nimble offers a pre-defined test task that compiles and runs all files in the tests directory beginning with letter t in their filename. Nim flags provided to nimble test will be forwarded to the compiler when building the tests.
+
+If we run nimble test on our example project created in sections above, the default tests/test1.nim (pre-populated with one test) will run with the following output:
+
+$
+ nimble test
+  Verifying dependencies for myPackage@0.1.0
+  Compiling /home/username/myPackage/tests/test1 (from package myPackage) using c backend
+[OK] can add
+   Success: Execution finished
+   Success: All tests passed
+
+You may wish to override the default test task in your .nimble file. Here is a real-world example of a custom test task, which runs tests from seven different test files:
+
+task test, "General tests":
+  for file in ["tsources.nim", "tblocks.nim", "tnimib.nim", "trenders.nim"]:
+    exec "nim r --hints:off tests/" & file
+  for file in ["tblocks.nim", "tnimib.nim", "trenders.nim"]:
+    exec "nim r --hints:off -d:nimibCodeFromAst tests/" & file
+
+nimble c
+
+The c (or compile, js, cc, cpp) command can be used by developers to compile individual modules inside their package. All options passed to Nimble will also be passed to the Nim compiler during compilation. For example:
+
+Nimble will use the backend specified in the package's .nimble file if the command c or compile is specified. The more specific js, cc, cpp can be used to override that.
+nimble build
+
+The build command is mostly used by developers who want to test building their .nimble package. This command will build the package with default flags, i.e. a debug build which includes stack traces but no GDB debug information. The install command will build the package in release mode instead.
+
+Nim flags provided to nimble build will be forwarded to the compiler. Such compiler flags can be made persistent by using Nim configuration files.
+nimble run
+
+The run command can be used to build and run any binary specified in your package's bin list. The binary needs to be specified after any compilation flags if there are several binaries defined. Any flags after the binary or -- are passed to the binary when it is run. It is possible to run a binary from some dependency package. To do this pass the --package, -p option to Nimble. For example:
+
+nimble
+ --package:foo run <compilation_flags> bar <run_flags>
+
+nimble check
+
+The check command will read your package's .nimble file. It will then verify that the package's structure is valid.
+
+Example:
+
+$ nimble check
+    Error: Package 'x' has an incorrect structure.
+    It should contain a single directory hierarchy for source files, named 'x',
+    but file 'foobar.nim' is in a directory named 'incorrect' instead.
+    This will be an error in the future.
+    Hint: If 'incorrect' contains source files for building 'x', rename it to 'x'.
+    Otherwise, prevent its installation by adding `skipDirs = @["incorrect"]`
+    to the .nimble file.
+  Failure: Validation failed
+
+When using the check command, the development mode dependencies are also validated against the lock file. The following reasons for validation failure are possible:
+
+    The package directory is not under version control.
+    The package working copy directory is not in clean state.
+    Current VCS revision is not pushed on any remote.
+    The working copy needs sync.
+    The working copy needs lock.
+    The working copy needs merge or re-base.
+
+nimble install
+
+While nimble install <packageName> is used to download and install an existing package (see this guide), it can also be used for locally testing or developing a Nimble package by leaving out the package name parameter. Your current working directory must be a Nimble package and contain a valid package.nimble file.
+
+Nimble will install the package residing in the current working directory when you don't specify a package name and the directory contains a package.nimble file. This can be useful for developers who are locally testing their .nimble files before submitting them to the official package list.
+
+Dependencies required for developing or testing a project can be installed by passing --depsOnly without specifying a package name. Nimble will then install any missing dependencies listed in the package's package.nimble file in the current working directory. Note that dependencies will be installed globally.
+
+For example, to install the dependencies:
+
+$ nimble install --depsOnly
+
+nimble dump
+
+Outputs information about the package in the current working directory in an ini-compatible format. Useful for tools wishing to read metadata about Nimble packages who do not want to use the NimScript evaluator.
+
+The format can be specified with --json or --ini (and defaults to --ini). Use nimble dump pkg to dump information about provided pkg instead.
+nimble publish
+
+Publishing packages isn't a requirement, but doing so allows people to associate a specific name to a URL pointing to your package. This mapping is stored in the official packages repository.
+
+This repository contains a packages.json file that lists all the published packages. It contains a set of package names with associated metadata. You can read more about this metadata in the readme for the packages repository.
+
+To publish your package, you can do it in two different ways:
+
+    Semi-automatically, by running nimble publish, which requires a valid GitHub account with a personal access token. The token is stored in $nimbleDir/github_api_token, which can be replaced if you need to update/replace your token.
+
+    Manually, by forking the packages repository, adding an entry into the packages.json file for your packages, and creating a pull request with your changes.
+
+You need to do this only once, i.e. no need to do it every time you increase the version of your package.
+Releasing a new version
+
+Version releases are done by creating a tag in your Git or Mercurial repository.
+
+Whenever you want to release a new version, you should remember to first increment the version in your .nimble file and commit your changes. Only after that is done should you tag the release.
+
+To summarize, the steps for release are:
+
+    Increment the version in your .nimble file.
+    Commit your changes.
+    Tag your release, by for example running git tag v0.2.0.
+    Push your tags and commits.
+
+Once the new tag is in the remote repository, Nimble will be able to detect the new version.
+Git Version Tagging
+
+Use dot-separated numbers to represent the release version in the git tag label. Nimble will parse these git tag labels to know which versions of a package are published.
+
+v0.2.0
+        # 0.2.0
+v1
+            # 1
+v1.2.3-zuzu
+   # 1.2.3
+foo-1.2.3.4
+   # 1.2.3.4
+
+September 14, 2026
+Made with Material for MkDocs
+
+
+Skip to content
+logo
+Nimble User Guide
+Nimble develop workflow
+Type to start searching
+nim-lang/nimble
+
+    v0.24.1
+    1.4k
+    210
+
+    Home
+    Use existing packages
+    Create Nimble packages
+    Nimble develop workflow
+    Misc
+
+    Nimble develop workflow
+        Nimble develop workflow
+            nimble setup
+            nimble lock
+            nimble develop
+                .nimble-link
+            nimble sync
+            nimble upgrade
+            Example
+
+Nimble develop workflow
+
+This guide assumes you are already familiar with creating a new Nimble package.
+
+Here you will learn how to use nimble develop to update the dependencies of your package. First we will list and explain all commands connected to this workflow, and at the bottom of the page you'll see the example of using them in praxis.
+nimble setup
+
+The nimble setup command creates a nimble.paths file containing file system paths to the dependencies. It also includes the paths file in the config.nims file (by creating it if it does not already exist) to make them available for the compiler.
+
+The command also adds nimble.develop and nimble.paths files to the .gitignore file.
+
+Warning
+
+nimble.paths file is user-specific and must not be committed.
+nimble lock
+
+The nimble lock command will generate or update a package lock file named nimble.lock. This file is used for pinning the exact versions of the dependencies of the package. The file is intended to be committed and used by other developers to ensure that exactly the same version of the dependencies is used by all developers.
+
+The lock files have the structure as in the following example:
+
+{
+  "version": 2,
+  "packages": {
+     ...
+     "chronos": {
+      "version": "3.0.2",
+      "vcsRevision": "aab1e30a726bb47c5d3f4a75a826981836cde9e2",
+      "url": "https://github.com/status-im/nim-chronos",
+      "downloadMethod": "git",
+      "dependencies": [
+        "stew",
+        "bearssl",
+        "httputils",
+        "unittest2"
+      ],
+      "checksums": {
+        "sha1": "a1cdaa77995f2d1381e8f9dc129594f2fa2ee07f"
+      }
+    },
+    ...
+  }
+}
+
+    version - JSON schema version.
+    packages - JSON object containing JSON objects for all dependencies,
+    chronos - Nested JSON object keys are the names of the dependencies packages.
+    version - The version of the dependency.
+    vcsRevision - The revision at which the dependency is locked.
+    url - The URL of the repository of the package.
+    downloadMethod - git or hg according to the type of the repository at url.
+    dependencies - The direct dependencies of the package. Used for writing the reverse dependencies of the package in the nimbledata.json file. Those packages' names also must be in the lock file.
+    checksums - A JSON compound object containing different checksums used for verifying that a downloaded package is exactly the same as the pinned in the lock file package. Currently, only sha1 checksums are supported.
+    sha1 - The sha1 checksum of the package files.
+
+If a lock file nimble.lock exists, then on performing all Nimble commands which require searching for dependencies and downloading them in the case they are missing (like build, install, develop), it is read and its content is used to download the same version of the project dependencies by using the URL, download method and VCS revision written in it.
+
+The checksum of the downloaded package is compared against the one written in the lock file. In the case the two checksums are not equal then it will be printed error message and the operation will be aborted. Reverse dependencies are added for installed locked dependencies just like for any other package being locally installed.
+nimble develop
+
+The develop command is used for putting packages in a development mode. When executed with a list of packages, it clones their repositories. If it is executed in a package directory, it adds cloned packages to the special nimble.develop file. This is a special file which is used for holding the paths to development mode dependencies of the current directory package.
+
+When executed without any arguments inside a package directory, nimble develop sets up all of the project's dependencies in develop mode.
+
+nimble develop <pkg> can also be run outside of a project directory; in that case it clones the given package and records a free develop file for it, so it can be included from another project's develop file. It has the following structure:
+
+{
+    "version": 1,
+    "includes": [],
+    "dependencies": []
+}
+
+    version - JSON schema version
+    includes - JSON array of paths to included files.
+    dependencies - JSON array of paths to Nimble packages directories.
+
+The format for included develop files is the same as the project's develop file.
+
+Develop files validation rules:
+
+    The included develop files must be valid.
+    The packages listed in the dependencies section and in the included develop files are required to be valid Nimble packages, but they are not required to be valid dependencies of the current project. In the latter case, they are simply ignored.
+    The develop files of the develop mode dependencies of a package are being followed and processed recursively. Finally, only one common set of develop mode dependencies is created.
+    In the final set of develop mode dependencies, it is not allowed to have more than one package with the same name but with different file system paths.
+
+Just as with the install command, a package URL may also be specified instead of a name.
+
+If present, the validity of the package's develop file is added to the requirements for validity of the package which is determined by nimble check command.
+
+The develop command has a list of options:
+
+    -p, --path path - Specifies the path where the packages should be cloned.
+    -c, --create [path] - Creates an empty develop file with the name nimble.develop in the current directory, or, if a path is present, to the given directory with a given name.
+    -a, --add path - Adds the package at the given path to the nimble.develop file.
+    -r, --removePath path - Removes the package at the given path from the nimble.develop file.
+    -n, --removeName path - Removed the package with the given name from the nimble.develop file.
+    -i, --include file - Includes a develop file into the current directory's one.
+    -e, --exclude file - Excludes a develop file from the current directory's one.
+    --withDependencies - Clones for develop also the dependencies of the packages for which the develop command is executed.
+    --developFile - Changes the name of the develop file which to be manipulated. It is useful for creating a free develop file which is not associated with any project intended for inclusion in some other develop file.
+
+    Note: The -g, --global option (old style global link files) has been removed. Use per-project or free develop files instead.
+
+The options for manipulation of the develop files could be given only when executing develop command from some package's directory, unless --developFile option with a name of develop file is explicitly given.
+
+Because the develop files are user-specific and they contain local file system paths they must not be committed. (Running nimble setup takes care of this by adding nimble.develop to the .gitignore file.)
+.nimble-link
+
+These files are created by Nimble when using the develop command. They are very simple and contain two lines.
+
+    The first line: Always a path to the .nimble file.
+
+    The second line: Always a path to the Nimble package's source code. Usually $pkgDir/src, depending on what srcDir is set to.
+
+The paths written by Nimble are always absolute. But Nimble (and the Nim compiler) also supports relative paths, which will be read relative to the .nimble-link file.
+nimble sync
+
+The nimble sync command will synchronize develop mode dependencies with the content of the lock file. If the revision specified in the lock file is not found locally, it tries to fetch it from the configured remotes. If it is present on multiple branches, it tries to stay on the current one, and if can't, it prefers local branches rather than remote-tracking ones. If found on more than one branch, it gives the user a choice whether to switch.
+
+Sync operation will also download non-develop mode dependencies versions described in the lock file if they are not already present in the Nimble cache.
+
+If the -l, --listOnly option is given then the command only lists development mode dependencies whose working copies are out of sync, without actually syncing them and without downloading missing non-develop mode dependencies.
+nimble upgrade
+
+The nimble upgrade command updates dependencies in the lock file to the newest versions compatible with the package's requirements.
+
+    nimble upgrade with no arguments upgrades all dependencies to the newest compatible versions.
+    nimble upgrade <pkg> [<pkg> ...] upgrades only the named package(s), leaving the rest of the lock file untouched.
+
+nimble
+ upgrade            # upgrade everything
+nimble
+ upgrade itertools  # upgrade only itertools
+
+Example
+
+Starting from a myPackage project we used as an example in creating Nimble packages guide, first we will add some dependencies to the myPackage.nimble file:
+
+...
+
+# Dependencies
+
+requires "nim >= 2.0.0"
+requires "nimibook == 0.3.1"
+requires "itertools == 0.3.0"
+
+...
+
+Now we run nimble setup to see if we already have all needed dependencies or if there is something that needs to be downloaded. This command also creates/updates nimble.paths and config.nims files.
+
+$
+ nimble setup
+  Verifying dependencies for myPackage@0.1.0
+     Info:  Dependency on nimibook@0.3.1 already satisfied
+  Verifying dependencies for nimibook@0.3.1
+     Info:  Dependency on nimib@>= 0.3.7 already satisfied
+  Verifying dependencies for nimib@0.3.10
+     Info:  Dependency on fusion@>= 1.2 already satisfied
+  Verifying dependencies for fusion@1.2
+     Info:  Dependency on markdown@>= 0.8.1 already satisfied
+  Verifying dependencies for markdown@0.8.7
+     Info:  Dependency on mustache@>= 0.2.1 already satisfied
+  Verifying dependencies for mustache@0.4.3
+     Info:  Dependency on parsetoml@>= 0.7.0 already satisfied
+  Verifying dependencies for parsetoml@0.7.1
+     Info:  Dependency on jsony@>= 1.1.5 already satisfied
+  Verifying dependencies for jsony@1.1.5
+     Info:  Dependency on jsony@>= 1.1.5 already satisfied
+  Verifying dependencies for jsony@1.1.5
+ Installing itertools@0.3.0
+Downloading
+ https://github.com/narimiran/itertools using git
+  Verifying dependencies for itertools@0.3.0
+ Installing itertools@0.3.0
+  Success:  itertools installed successfully.
+     Info:  "nimble.paths" is generated.
+     Info:  "config.nims" is set up.
+
+With all the dependencies installed, we can now create a lock file by running nimble lock:
+
+$
+ nimble lock
+     Info:  Generating the lock file...
+  Verifying dependencies for myPackage@0.1.0
+     Info:  Dependency on nimibook@0.3.1 already satisfied
+  Verifying dependencies for nimibook@0.3.1
+     Info:  Dependency on nimib@>= 0.3.7 already satisfied
+  Verifying dependencies for nimib@0.3.10
+     Info:  Dependency on fusion@>= 1.2 already satisfied
+  Verifying dependencies for fusion@1.2
+     Info:  Dependency on markdown@>= 0.8.1 already satisfied
+  Verifying dependencies for markdown@0.8.7
+     Info:  Dependency on mustache@>= 0.2.1 already satisfied
+  Verifying dependencies for mustache@0.4.3
+     Info:  Dependency on parsetoml@>= 0.7.0 already satisfied
+  Verifying dependencies for parsetoml@0.7.1
+     Info:  Dependency on jsony@>= 1.1.5 already satisfied
+  Verifying dependencies for jsony@1.1.5
+     Info:  Dependency on jsony@>= 1.1.5 already satisfied
+  Verifying dependencies for jsony@1.1.5
+     Info:  Dependency on itertools@0.3.0 already satisfied
+  Verifying dependencies for itertools@0.3.0
+  Success:  The lock file is generated.
+
+We can run nimble check to verify everything is working properly:
+
+$
+ nimble check
+  Success:  The package "myPackage" is valid.
+
+If you don't need to update and/or modify your dependencies, your job is done. You can commit the nimble.lock file to make sure other developers, when they work on your package, use the exact same dependencies as you.
+
+On the other hand, if you want to fix a bug in a dependency which manifests in your own package, or you want to see if an updated version of some dependency will still work with your package, the nimble develop command will come handy.
+
+For our example, let's say we want to update the itertools dependency from version 0.3.0 to version 0.4.0. We will put itertools in the develop mode, which will clone its git repo to a subdirectory of our package:
+
+$
+ nimble develop itertools
+Downloading
+ https://github.com/narimiran/itertools using git
+  Verifying dependencies for itertools@0.4.0
+  Success:  "itertools" set up in develop mode successfully to "/home/user/myPackage/itertools".
+  Success:  The package "itertools@0.4.0" at path "/home/user/myPackage/itertools"
+            is added to the develop file "nimble.develop".
+     Info:  "nimble.paths" is updated.
+
+If you check the contents of nimble.paths, you will notice that the path for itertools is no more in ~/.nimble/pkgs2 directory (where the version 0.3.0 is), but it has the following value:
+
+...
+--path:
+"/home/user/myPackage/itertools/src"
+...
+
+We can now run our tests, which will use the updated version of itertools to see if everything still works as expected.
+
+Running nimble check now will correctly warn us that our working copy and the lock file are not synchronized:
+
+$
+ nimble check
+    Error:  Some of package's develop mode dependencies are invalid.
+        ... Package "itertools" at "/home/user/myPackage/itertools" has not synced working copy..
+     Hint:  You have to call `nimble sync` to synchronize your develop mode dependencies working copies with the latest lock file.
+   Failure: Validation failed.
+
+There are two paths we can take to synchronize them. One is, as it says in the hint above, to put the development version at the state written in the lock file (in our case, to checkout version 0.3.0), by running nimble sync. The other option is to update the lock file (to use version 0.4.0) by running nimble lock.
+
+If we run nimble lock at this point, we will get an error, reminding us that in myPackage.nimble we still have requires "itertools == 0.3.0", which we need to manually update to 0.4.0. After we change the version number in the .nimble file, we can successfully run nimble lock:
+
+$
+ nimble lock
+     Info:  Updating the lock file...
+  Verifying dependencies for myPackage@0.1.0
+     Info:  Dependency on nimibook@0.3.1 already satisfied
+  Verifying dependencies for nimibook@0.3.1
+     Info:  Dependency on nimib@>= 0.3.7 already satisfied
+  Verifying dependencies for nimib@0.3.10
+     Info:  Dependency on fusion@>= 1.2 already satisfied
+  Verifying dependencies for fusion@1.2
+     Info:  Dependency on markdown@>= 0.8.1 already satisfied
+  Verifying dependencies for markdown@0.8.7
+     Info:  Dependency on mustache@>= 0.2.1 already satisfied
+  Verifying dependencies for mustache@0.4.3
+     Info:  Dependency on parsetoml@>= 0.7.0 already satisfied
+  Verifying dependencies for parsetoml@0.7.1
+     Info:  Dependency on jsony@>= 1.1.5 already satisfied
+  Verifying dependencies for jsony@1.1.5
+     Info:  Dependency on jsony@>= 1.1.5 already satisfied
+  Verifying dependencies for jsony@1.1.5
+     Info:  Dependency on itertools@0.4.0 already satisfied
+  Verifying dependencies for itertools@0.4.0
+  Success:  The lock file is updated.
+
+Here are the changes in the nimble.lock file:
+
+--- a/nimble.lock
++++ b/nimble.lock
+@@ -12,13 +12,13 @@
+       }
+     },
+     "itertools": {
+-      "version": "0.3.0",
+-      "vcsRevision": "b0f6bb887c39bc7730f45abb72f7e9edd4714a66",
++      "version": "0.4.0",
++      "vcsRevision": "06c4de8b6b124368be269b00ecd0b34a3731739f",
+       "url": "https://github.com/narimiran/itertools",
+       "downloadMethod": "git",
+       "dependencies": [],
+       "checksums": {
+-        "sha1": "adaadfebd990a33d5e25df2fd0ce45a762af1003"
++        "sha1": "e98b828dbee752fb6f22cb3fe9fd00c13a2514f5"
+       }
+     },
+     "jsony": {
+
+Running nimble check confirms everything is synchronized:
+
+$
+ nimble check
+  Success:  The package "myPackage" is valid.
+
+We can now commit the changes in myPackage.nimble and nimble.lock files, so that our package uses updated dependencies and other developers are able to use the exact versions as we are running locally.
+
+If you are that "other developer" who is also working on the same package with your own develop-mode dependencies, and the package is updated by your colleague in the way described above, after you run git pull you will also need to run nimble sync to get synchronize the new version of the lockfile and your local dependencies.
+September 14, 2026
+Made with Material for MkDocs
+
+
+
+Skip to content
+logo
+Nimble User Guide
+Nimble package types
+Type to start searching
+nim-lang/nimble
+
+    v0.24.1
+    1.4k
+    210
+
+    Home
+    Use existing packages
+    Create Nimble packages
+    Nimble develop workflow
+    Misc
+
+    Misc
+        Nimble package types
+            Libraries
+            Binary packages
+            Hybrids
+        Configuration
+        .nimble file reference
+        Nimble's folder structure and packages
+        Troubleshooting
+
+Nimble package types
+
+When running nimble init wizard, you will have three different package types to choose from. Here are their specifications and differences.
+Libraries
+
+Library packages are likely the most popular form of Nimble packages. They are meant to be used by other library or binary packages.
+
+When Nimble installs a library, it will copy all of its files into $nimbleDir/pkgs2/pkgname-ver-checksum. It's up to the package creator to make sure that the package directory layout is correct, this is so that users of the package can correctly import the package.
+
+It is suggested that the layout be as follows. The directory layout is determined by the nature of your package, that is, whether your package exposes only one module or multiple modules.
+
+If your package exposes only a single module, then that module should be present in the source directory of your Git repository and should be named whatever your package's name is. A good example of this is the jester package which exposes the jester module. In this case, the jester package is imported with import jester.
+
+If your package exposes multiple modules then the modules should be in a PackageName directory. This will allow for a certain measure of isolation from other packages which expose modules with the same names. In this case, the package's modules will be imported with import PackageName/module.
+
+Here's a simple example multi-module library package called kool:
+
+.
+├── kool
+│   ├── useful.nim
+│   └── also_useful.nim
+└── kool.nimble
+
+In regards to modules which you do not wish to be exposed. You should place them in a PackageName/private directory. Your modules may then import these private modules with import PackageName/private/module. This directory structure may be enforced in the future.
+
+All files and folders in the directory where the .nimble file resides will be copied as-is. You can however skip some directories or files by setting the skipDirs, skipFiles or skipExt options in your .nimble file. Directories and files can also be specified on a whitelist basis. If you specify either of installDirs, installFiles or installExt, then Nimble will only install the files specified.
+Binary packages
+
+These are application packages which require building prior to installation. A package is automatically a binary package as soon as it sets at least one bin value, like so:
+
+bin = @["main"]
+
+In this case when nimble install is invoked, Nimble will build the main.nim file, copy it into $nimbleDir/pkgs2/pkgname-ver-checksum/ and subsequently create a symlink to the binary in $nimbleDir/bin/. On Windows, a stub .cmd file is created instead.
+
+The binary can be named differently than the source file with the namedBin table:
+
+namedBin["main"] = "mymain"
+namedBin = {"main": "mymain", "main2": "other-main"}.toTable()
+
+Note that namedBin entries override duplicates in bin.
+
+Dependencies are automatically installed before building. It's a good idea to test that the dependencies you specified are correct by running nimble build or nimble install in the directory of your package.
+Hybrids
+
+Binary packages will not install .nim files so include installExt = @["nim"] in your .nimble file if you intend for your package to be a hybrid binary/library combo.
+
+Historically, binaries that shared the name of a pkgname directory that contains additional .nim files required workarounds. This is now handled behind the scenes by appending an .out extension to the binary and is transparent to commands like nimble run or symlinks which can still refer to the original binary name.
+September 14, 2026
+Made with Material for MkDocs
+
+
+
+
+THIRD PARTY LIBRARIES OF NIM START ===
 
 <h1> <a href="https://nim-lang.org"><img src="asset/awesome-nim-logo.svg" alt="Awesome-nim-logo" width="600"/></a><a href="https://awesome.re"><img align="right" src="https://awesome.re/badge.svg"></a> </h1>
 
@@ -15214,6 +14645,8 @@ Made with Nim. Generated: 2026-09-08 04:34:11 UTC
     - [Vector](#vector)
     - [Matrix](#matrix)
   - [Deep Learning](#deep-learning)
+  - [AI Agents](#ai-agents)
+  - [AI REST API clients](#ai-rest-api-clients)
   - [Bigints](#bigints)
   - [Cryptography](#cryptography)
   - [Blockchain](#blockchain)
@@ -15241,6 +14674,7 @@ Made with Nim. Generated: 2026-09-08 04:34:11 UTC
   - [Gemini Servers](#gemini-servers)
   - [Frameworks](#frameworks)
   - [Template Engines](#template-engines)
+  - [String Validators](#string-validators)
   - [Authentication](#authentication)
 - [Game Development](#game-development)
   - [Game Libraries](#game-libraries)
@@ -15399,6 +14833,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [wepoll](https://github.com/xflywind/wepoll) - Windows epoll wrapper for Nim.
 - [faststreams](https://github.com/status-im/nim-faststreams) - Nearly zero-overhead input/output streams for Nim.
 - [lockfreequeues](https://github.com/elijahr/lockfreequeues) - Lock-free queue implementations for Nim.
+- [flysystem](https://github.com/openpeeps/flysystem) - A filesystem API for Nim, inspired by Flysystem from the PHP ecosystem.
 
 
 ### Processes
@@ -15536,7 +14971,8 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [Marvdown](https://github.com/openpeeps/marvdown) - A stupid simple Markdown parser.
 - [NimYAML](https://github.com/flyx/NimYAML) - YAML implementation for Nim.
 - [parsetoml](https://github.com/NimParsers/parsetoml) - A Nim library to parse TOML files.
-
+- [openparser](https://github.com/openpeeps/openparser) - A collection SIMD-accelerated parsers and dumpers. Supporting: JSON, YAML, XML, TOML, CSV, BSON, Plist, HTML, CSS, RSS, Atom, DotEnv, iCal, vCard, NIF, SQL, Regex, Gettext, Fast Binary Encoding (FBE), QR, SVG, Colors.
+- [sweetsyntax](https://github.com/openpeeps/sweetsyntax) - A generic parser and AST explorer for analyzing programming languages.
 
 ### Serialization
 
@@ -15551,10 +14987,13 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [ssz-serialization](https://github.com/status-im/nim-ssz-serialization) - Nim implementation of Simple Serialize (SSZ) serialization and merkleization.
 - [tnetstring](https://github.com/mahlonsmith/nim-tnetstring) - Parsing and serializing for the TNetstring format.
 - [toml-serialization](https://github.com/status-im/nim-toml-serialization) - Flexible TOML serialization `not` relying on run-time type information.
+- [jsony](https://github.com/treeform/jsony) - A loose, direct to object json parser with hooks.
 
 ### Standards
 
 - [isocodes](https://github.com/kraptor/isocodes) - ISO codes for Nim (ISO 3166-1, ISO 3166-2, ISO 3166-3, ISO 15924, ISO 15924, ISO 639-2, ISO 639-5)
+- [filetype](https://github.com/jiro4989/filetype) - Small and dependency free Nim package to infer file and MIME type checking the magic numbers signature.
+- [mimedb](https://github.com/openpeeps/mimedb) - A large database of MIME types for Nim.
 
 ## Text
 
@@ -15574,6 +15013,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [HastyScribe](https://github.com/h3rald/hastyscribe) - Self-contained markdown compiler generating self-contained HTML documents.
 - [markdown](https://github.com/soasme/nim-markdown) - A beautiful Markdown Parser in the Nim world.
 - [lester](https://github.com/madprops/lester) - Create quick documents out of Markdown, into HTML.
+- [marvdown](https://github.com/openpeeps/marvdown) - A stupid simple Markdown parser.
 
 
 ## Multimedia
@@ -15635,6 +15075,14 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [laser](https://github.com/numforge/laser) - Carefully-tuned primitives for running tensor and image-processing code on CPU, GPUs and accelerators.
 <!-- - [flambeau](https://github.com/SciNim/flambeau) - Nim bindings to libtorch. -->
 
+### AI Agents
+- [3code](https://github.com/capocasa/3code) - The Economical Coding Agent. Saves tokens, brain cycles, computer power, and your privacy.
+
+### AI REST API clients
+
+- [chachachat](https://github.com/openpeeps/chachachat) - A simple, embeddable LLM client API with chat and RAG capabilities. Compatible with OpenAI API.
+- [kavel](https://github.com/hanshs474/kavel-nim) - Client for the Kavel image API: text-to-image and photo edits, with a free tier that needs no API key.
+
 
 ### Bigints
 
@@ -15660,7 +15108,8 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [shimsham](https://github.com/apense/shimsham) - A collection of hash functions, including JH, SHA-2, SHA-3, SipHash, Tiger, and Whirlpool.
 - [xxhash.nim](https://github.com/OpenSystemsLab/xxhash.nim) - A wrapper for the xxhash hashing library in Nim.
 - [xxtea](https://github.com/xxtea/xxtea-nim) - XXTEA encryption algorithm library.
-
+- [nimcypher](https://github.com/nimbase/nimcypher) - A Port of Monocypher in Nim + high-level API, extra algos, and opt-in SIMD acceleration.
+- [blackpaper](https://github.com/openpeeps/blackpaper) - A super simple password strength estimator in Nim.
 
 ### Blockchain
 
@@ -15681,7 +15130,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [supersnappy](https://github.com/guzba/supersnappy) - Dependency-free and performant Nim Snappy implementation.
 - [snappy](https://github.com/status-im/nim-snappy) - Nim implementation of Snappy compression algorithm.
 - [zip](https://github.com/nim-lang/zip) - Wrapper for the zip library.
-
+- [nbrotli](https://github.com/nimbase/nbrotli) - A 100% pure Nim port of Brotli, no C bindings, no FFI. SIMD accelerated + MemFiles support.
 
 ## User Interface
 
@@ -15825,6 +15274,9 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [Mummy](https://github.com/guzba/mummy) - A multi-threaded HTTP 1.1 server with first-class support for WebSockets.
 - [netkit](https://github.com/iocrate/netkit) - Out-of-the-box, stable and secure network facilities and utilities written in pure Nim.
 - [jshttp2](https://juancarlospaco.github.io/nodejs/nodejs/jshttp2) - Async HTTPS 2.0 web server.
+- [caprese](https://github.com/zenywallet/caprese) - A front-end web server specialized for real-time message exchange.
+- [hyperx](https://github.com/nitely/nim-hyperx) - Pure Nim HTTP/2 client and server.
+- [powpow](https://github.com/openpeeps/powpow) - An event notification library. Supporting UDP, TCP, HTTP/1.1, HTTP/2, WebSockets, and more. Alternative to libuv and libevent.
 
 ### Gemini Servers
 
@@ -15856,12 +15308,16 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [smalte](https://github.com/roquie/smalte) - It is a dead simple and lightweight template engine. Specially designed for configure application before start in Docker.
 - [templates](https://github.com/onionhammer/nim-templates) - A simple string templating library for Nim.
 - [temple](https://codeberg.org/onbox/temple) - Simple run-time templating library for Nim.
-- [Tim](https://github.com/openpeeps/tim) - A high-performance template engine & markup language.
+- [Tim](https://github.com/tim-engine/tim) - A high-performance template engine & markup language.
 
+### String Validators
+- [valido](https://github.com/openpeeps/valido) - A library of string validators and sanitizers.
+- [bag](https://github.com/openpeeps/bag) - Validate HTTP input data in a fancy way (based on [pkg/valido](https://github.com/openpeeps/valido)).
 
 ### Authentication
 
 - [oauth](https://github.com/CORDEA/oauth) - OAuth library for Nim.
+- [twofa](https://github.com/openpeeps/twofa) - Generate TOTP, HOTP and QR codes.
 
 
 ## Game Development
@@ -15930,6 +15386,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [Futhark](https://github.com/PMunch/futhark) - Automatic wrapping of C headers in Nim with libclang.
 - [nimpy](https://github.com/yglukhov/nimpy) - Generate Python wrappers and call Python from Nim.
 - [jnim](https://github.com/yglukhov/jnim) - Nim - Java bridge.
+- [denim](https://github.com/openpeeps/denim) - Use Nim to build powerful Node.js/Bun addons via Node API (NAPI).
 <!-- - [rnim](https://github.com/SciNim/rnim) - A bridge between R and Nim. Currently this is a barely working prototype. -->
 
 
@@ -15946,7 +15403,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [nimby](https://github.com/treeform/nimby) - A very simple and unofficial package manager for Nim.
 - [nifty](https://github.com/h3rald/nifty) - A decentralized pseudo package manager and script runner.
 - [nsis](https://github.com/nim-libs/nsis) - Nim programming language setup tool.
-
+- [clue](https://github.com/openpeeps/clue) - An alternative package manager for Nim development.
 
 ### Logging
 
@@ -15993,6 +15450,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 - [cozycliparser](https://github.com/indiscipline/cozycliparser) - Lean, feature-rich, DSL-free CLI parser based on `std/parseopt`. [Docs](https://indiscipline.github.io/cozycliparser/).
 - [Cliquet](https://github.com/RowDaBoat/cliquet) - A CLI args and config file parser merging both into a single object, with automatic help generation.
 - [easyargs](https://github.com/nervecenter/easyargs) - Dead simple data-oriented argument parsing for Nim.
+- [kapsis](https://github.com/openpeeps/kapsis) - An extensible, macro-based DSL with runtime dispatch, built-in validation, type checking, and plugins (shared libs) support.
 
 ### Static Analysis
 
@@ -16024,7 +15482,7 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 ### Community
 
 - [The Nim forum](http://forum.nim-lang.org/)
-- [The Nim IRC channel](http://webchat.freenode.net/?channels=nim)
+- [The Nim IRC channel](https://web.libera.chat/#nim)
 - [The Nim Gitter channel](https://gitter.im/nim-lang/Nim)
 - [The Nim Discord channel](https://discord.gg/ptW3Rb3)
 - [The Nim mailing list (forum archive)](https://www.mail-archive.com/nim-general@lists.nim-lang.org/)
@@ -16068,6 +15526,23 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
 *Awesome-Nim logo is based on the "Nim Crown" logo by Joseph Wecker, used with permission from the Nim project.*
 
 [
+  {
+    "name": "prx",
+    "url": "https://github.com/thebadinteger/prx.git",
+    "method": "git",
+    "tags": [
+      "proxy",
+      "socks",
+      "socks4",
+      "socks5",
+      "http",
+      "networking",
+      "async"
+    ],
+    "description": "universal proxy client and server library for Nim",
+    "license": "MIT",
+    "web": "https://github.com/thebadinteger/prx"
+  },
   {
     "name": "terminal_widgets",
     "url": "https://github.com/titanomachy/terminal-widgets",
@@ -38618,6 +38093,28 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
     "web": "https://github.com/momeemt/Unit"
   },
   {
+    "name": "lockfree",
+    "url": "https://github.com/elijahr/lockfree",
+    "method": "git",
+    "tags": [
+      "concurrency",
+      "lock-free",
+      "queues",
+      "smr",
+      "ebr",
+      "spmc",
+      "mpsc",
+      "mpmc",
+      "spsc",
+      "channels",
+      "ring-buffer",
+      "c-abi"
+    ],
+    "description": "Lock-free queues, SMR, and managed-payload types for Nim.",
+    "license": "MIT",
+    "web": "https://github.com/elijahr/lockfree"
+  },
+  {
     "name": "lockfreequeues",
     "url": "https://github.com/elijahr/lockfreequeues",
     "method": "git",
@@ -58028,453 +57525,244 @@ Also, unlike those above, which requires runtime dependancy, some pure-Nim libra
     "description": "Nim GUI library on top of SDL3 modelled on WD-style controls and API",
     "license": "CC BY-NC-SA 4.0",
     "web": "https://github.com/lipunila-sonaliwan-fr/nim.wdgui"
+  },
+  {
+    "name": "ktls",
+    "url": "https://github.com/nimbase/ktls-nim",
+    "method": "git",
+    "tags": [
+      "tls",
+      "kernel",
+      "linux",
+      "ktls",
+      "cipher",
+      "nimbase"
+    ],
+    "description": "Linux kernel TLS (kTLS) offload",
+    "license": "MIT",
+    "web": "https://github.com/nimbase/ktls-nim"
+  },
+  {
+    "name": "piper",
+    "url": "https://github.com/Dregacorp/piper",
+    "method": "git",
+    "tags": [
+      "pipe-operator",
+      "function-composition-operator"
+    ],
+    "description": "simple library offering pipe operator :> and function composition operator >>> for nim.",
+    "license": "BSD-3-Clause",
+    "web": "https://github.com/Dregacorp/piper"
+  },
+  {
+    "name": "ndav",
+    "url": "https://github.com/nimbase/webdav",
+    "method": "git",
+    "tags": [
+      "webdav",
+      "caldav",
+      "carddav",
+      "ical",
+      "calendar",
+      "server",
+      "client",
+      "vcard"
+    ],
+    "description": "WebDAV, CalDAV/CardDAV server and client. Powered by PowPow",
+    "license": "MIT",
+    "web": "https://github.com/nimbase/webdav"
+  },
+  {
+    "name": "cursorsdk",
+    "url": "https://github.com/Niminem/cursorsdk",
+    "method": "git",
+    "tags": [
+      "cursor",
+      "ai",
+      "llm"
+    ],
+    "description": "Cursor SDK Bridge client for the Nim programming language",
+    "license": "MIT",
+    "web": "https://github.com/Niminem/cursorsdk"
+  },
+  {
+    "name": "kavel",
+    "url": "https://github.com/hanshs474/kavel-nim",
+    "method": "git",
+    "tags": [
+      "ai",
+      "image",
+      "image-generation",
+      "api-client",
+      "http"
+    ],
+    "description": "Generate AI images from Nim with no API key and no account (Kavel AI client)",
+    "license": "MIT",
+    "web": "https://www.kavel.ai"
+  },
+  {
+    "name": "finz",
+    "url": "https://github.com/capocasa/finz",
+    "method": "git",
+    "tags": [
+      "fints",
+      "hbci",
+      "banking",
+      "sepa",
+      "sepa-transfer",
+      "transactions"
+    ],
+    "description": "FinTS 3.0 client library: SEPA (instant) transfers with Verification of Payee, camt/MT940 statements, decoupled TAN",
+    "license": "MIT",
+    "web": "https://github.com/capocasa/finz"
+  },
+  {
+    "name": "skia",
+    "url": "https://github.com/nimbase/skia-nim",
+    "method": "git",
+    "tags": [
+      "2d",
+      "graphics",
+      "bindings",
+      "wrapper",
+      "rendering",
+      "gradient",
+      "engine"
+    ],
+    "description": "Idiomatic Nim bindings for the Skia 2D graphics library",
+    "license": "MIT",
+    "web": "https://github.com/nimbase/skia-nim"
+  },
+  {
+    "name": "polyline",
+    "url": "https://github.com/Xenoglyphiq/polyline-nim",
+    "method": "git",
+    "tags": [
+      "polyline",
+      "geo",
+      "gis",
+      "maps",
+      "encoding",
+      "google"
+    ],
+    "description": "Encode and decode Google's Encoded Polyline Algorithm Format",
+    "license": "MIT OR Apache-2.0",
+    "web": "https://github.com/Xenoglyphiq/polyline-nim"
+  },
+  {
+    "name": "nimpy_numpy",
+    "url": "https://github.com/pietroppeter/nimpy-numpy",
+    "method": "git",
+    "tags": [
+      "nimpy",
+      "numpy",
+      "python"
+    ],
+    "description": "numpy arrays for nimpy: Nim procs that take and return numpy arrays",
+    "license": "MIT",
+    "web": "https://github.com/pietroppeter/nimpy-numpy"
+  },
+  {
+    "name": "striptease",
+    "url": "https://github.com/openpeeps/striptease",
+    "method": "git",
+    "tags": [
+      "exif",
+      "metadata",
+      "photo",
+      "cli",
+      "cr2",
+      "dng",
+      "tiff",
+      "wav",
+      "jpg"
+    ],
+    "description": "Strip metadata tags from audio, image, raw and video files (WAV, JPEG, PNG, GIF, WebP, TIFF RAW, CR3, HEIC, MP4/MOV, AVI, MKV)",
+    "license": "MIT",
+    "web": "https://github.com/openpeeps/striptease"
+  },
+  {
+    "name": "pmtiles",
+    "url": "https://github.com/Xenoglyphiq/pmtiles-nim",
+    "method": "git",
+    "tags": [
+      "pmtiles",
+      "geo",
+      "gis",
+      "maps",
+      "tiles",
+      "vector-tiles"
+    ],
+    "description": "Read PMTiles v3 tile archives: header, directories, tile lookup and tile bytes",
+    "license": "MIT OR Apache-2.0",
+    "web": "https://github.com/Xenoglyphiq/pmtiles-nim"
+  },
+  {
+    "name": "nimlm",
+    "url": "https://github.com/lipunila-sonaliwan-fr/nim.llm",
+    "method": "git",
+    "tags": [
+      "LPCS",
+      "Lab'Oratoire",
+      "sonaliwan",
+      "llm",
+      "fine-tune",
+      "model",
+      "text",
+      "image",
+      "sound",
+      "rag",
+      "embedding",
+      "tutorial",
+      "english",
+      "french",
+      "macOS",
+      "Linux",
+      "Windows",
+      "cli"
+    ],
+    "description": "Run, fine-tune and build language models in pure Nim. No dependencies: no llama.cpp, no Python, no BLAS, no C library.",
+    "license": "CC BY-NC-SA 4.0",
+    "web": "https://github.com/lipunila-sonaliwan-fr/nim.llm"
+  },
+  {
+    "name": "nimproj",
+    "url": "https://github.com/JohnMoutafis/nimproj",
+    "method": "git",
+    "tags": [
+      "library",
+      "wrapper",
+      "ffi",
+      "proj",
+      "projection",
+      "coordinate",
+      "transform",
+      "gis",
+      "spatial",
+      "wkt",
+      "wkb",
+      "geojson"
+    ],
+    "description": "Nim wrapper for the PROJ (libproj) coordinate transformation library.",
+    "license": "MIT",
+    "web": "https://github.com/JohnMoutafis/nimproj"
+  },
+  {
+    "name": "matter",
+    "url": "https://github.com/elcritch/matter",
+    "method": "git",
+    "tags": [
+      "textmate",
+      "syntax-highlighting",
+      "tokenizer",
+      "grammar"
+    ],
+    "description": "TextMate grammar engine",
+    "license": "MIT",
+    "web": "https://github.com/elcritch/matter"
   }
 ]
 
 
+THIRD PARTY LIBRARIES OF NIM END
 
-Manual Memory Management in Nim
-
-In Nim, manual memory management offers precise control over allocation and deallocation, which can be essential in performance-critical or resource-constrained environments. Unlike garbage-collected memory, manual management requires explicit calls to allocate and free memory, increasing the risk of leaks and dangling pointers if mishandled.
-Memory Allocation
-
-Memory allocation in Nim typically uses new for typed objects or alloc for untyped blocks. For example:
-
-import sequtils
-
-type
-    MyType = object
-        a: int
-        b: string
-
-var myObj = new(MyType)  # Allocates memory for MyType
-myObj.a = 42
-myObj.b = "Hello"
-
-Nim
-
-Note that new initializes memory for the specified type. However, this example omits error handling for allocation failure, which can occur under low-memory conditions. Robust code should consider such failure modes.
-Memory Deallocation
-
-Memory allocated with new or alloc must be explicitly freed using dispose to avoid leaks:
-
-dispose(myObj)  # Frees the allocated memory
-
-Nim
-
-Failing to call dispose results in memory leaks, which accumulate over time and can cause application crashes or degraded performance. Conversely, double-freeing or using disposed memory leads to undefined behavior, often causing crashes or security vulnerabilities.
-Memory Management Best Practices
-Ensure every new or alloc has a matching dispose. Avoid using pointers after disposal to prevent undefined behavior.
-Using Pointers
-
-Pointers allow dynamic memory handling but increase complexity and risk. Example:
-
-var myPtr: ptr MyType = new(MyType)  # Allocate memory for MyType
-myPtr[].a = 100
-myPtr[].b = "World"
-
-dispose(myPtr)  # Free the memory
-
-Nim
-
-Common misuse includes forgetting to dispose pointers or using them after disposal. Nim does not enforce safety here, so discipline is required.
-Memory Layout
-
-Memory is divided into segments with distinct roles:
-Local Variables
-Dynamic Allocation
-Global Variables
-Instructions
-Stack
-Function Frames
-Heap
-Allocated Objects
-Static Memory
-Globals
-Code Segment
-Executable Code
-
-The Heap handles dynamic allocations and is prone to fragmentation. The Stack stores local variables and function call frames with automatic cleanup on scope exit. The Static Memory holds globals with fixed lifetime. Understanding these distinctions guides appropriate allocation strategies.
-Memory Fragmentation
-
-Fragmentation occurs when many small allocations and deallocations leave unusable gaps in the heap, reducing effective memory. This is a common failure mode in long-running applications with manual memory management. Mitigation strategies include pooling allocations or batching related data.
-Performance Considerations
-
-Manual management can reduce overhead compared to garbage collection but increases code complexity and maintenance cost. Bugs related to memory management are often subtle and hard to reproduce. Profiling and rigorous testing are essential.
-Scope and Exclusions
-
-This overview excludes Nim’s garbage collection mechanisms and automatic reference counting, focusing solely on explicit manual management. These automated systems are generally preferred unless specific performance or control requirements dictate otherwise.
-Advanced Memory Management Techniques
-
-Beyond basic allocation and disposal, Nim supports techniques to optimize memory usage and control.
-Memory Pools
-
-Memory pools allocate a large block upfront, serving smaller allocations from it. This reduces fragmentation and improves allocation speed but requires careful management of pool lifetime and fragmentation within the pool.
-
-import sequtils
-
-const
-    POOL_SIZE = 1024 * 1024  # 1 Megabyte pool
-
-type
-    Pool = object
-        data: ptr byte
-        size: int
-        offset: int  # Track current allocation offset
-
-var pool: Pool
-pool.data = cast[ptr byte](alloc(POOL_SIZE))
-pool.size = POOL_SIZE
-pool.offset = 0
-
-proc allocFromPool(size: int): ptr byte =
-    if pool.offset + size > pool.size:
-        return nil  # Pool exhausted
-    let ptr = pool.data + pool.offset
-    pool.offset += size
-    return ptr
-
-# Free entire pool at once when done
-dispose(pool.data)
-
-Nim
-
-This example omits deallocation of individual blocks within the pool, which is a common tradeoff for speed and simplicity.
-Custom Allocators
-
-Custom allocators replace default allocation strategies, useful in specialized scenarios like real-time systems or embedded devices.
-
-proc myAllocator(size: int): ptr byte =
-    # Insert custom allocation logic here
-    return cast[ptr byte](alloc(size))
-
-proc myDeallocator(ptr: ptr byte) =
-    # Insert custom deallocation logic here
-    dispose(ptr)
-
-# Usage
-var myData = myAllocator(256)
-myDeallocator(myData)
-
-Nim
-
-Custom allocators must carefully handle alignment, fragmentation, and failure modes.
-Using Finalizers
-
-Finalizers automate cleanup by running code when an object is disposed. They are useful for managing resources beyond raw memory, such as file handles or network connections.
-
-type
-    MyObject = object
-        a: int
-        b: string
-
-proc finalizeMyObject(obj: var MyObject) =
-    # Cleanup logic, e.g., closing resources
-    echo "Finalizing object with a: ", obj.a
-
-# Register the finalizer
-finalize finalizeMyObject
-
-var obj = new(MyObject)
-obj.a = 42
-obj.b = "Hello"
-dispose(obj)  # finalizeMyObject is invoked here
-
-Nim
-
-Note that finalizers add overhead and complexity; they are not a substitute for disciplined manual management.
-Memory Management Patterns
-
-Several patterns help manage manual memory safely and efficiently:
-
-    RAII (Resource Acquisition Is Initialization): Ensures resources are released when objects go out of scope, reducing leaks.
-    Smart Pointers: Encapsulate pointers with automatic deallocation, balancing manual control with safety.
-
-RAII Example
-
-type
-    RAIIObject = object
-        resource: ptr byte
-
-proc newRAIIObject(): RAIIObject =
-    result.resource = alloc(256)
-
-proc disposeRAIIObject(obj: var RAIIObject) =
-    dispose(obj.resource)
-
-# Usage
-var obj = newRAIIObject()
-disposeRAIIObject(obj)
-
-Nim
-Smart Pointer Example
-
-type
-    SmartPtr = object
-        data: ptr int
-
-proc newSmartPtr(): SmartPtr =
-    result.data = new(int)
-
-proc disposeSmartPtr(ptr: SmartPtr) =
-    dispose(ptr.data)
-
-# Usage
-var mySmartPtr = newSmartPtr()
-disposeSmartPtr(mySmartPtr)
-
-Nim
-
-
-
-Understanding Nim's Memory Model
-
-Nim combines manual memory management with automatic garbage collection, allowing developers to balance control and convenience. This hybrid approach requires awareness of when to manage memory explicitly and when to rely on the collector, especially in performance-sensitive or resource-constrained environments.
-Memory Management Strategies
-
-    Manual Memory Management: Offers precise control but demands careful use of new and dispose. Common pitfalls include forgetting to free memory, causing leaks, or double-free errors leading to undefined behavior.
-    Automatic Garbage Collection: Nim’s default GC uses mark-and-sweep, simplifying memory handling but potentially causing pauses in latency-sensitive applications.
-
-Memory Allocation in Nim
-
-Memory allocation via new requires explicit deallocation with dispose. Failure to do so accumulates unreleased memory, which is a frequent source of leaks in long-running programs.
-
-
-type
-  MyType = object
-    value: int
-
-var myObj: MyType = new(MyType)
-myObj.value = 42
-# Manual deallocation required to avoid leaks
-dispose(myObj)
-    
-
-Nim
-Garbage Collection in Nim
-
-Nim’s mark-and-sweep GC traverses reachable objects and reclaims unreachable ones. It is effective for most applications but can introduce latency spikes and does not handle cyclic references without additional measures.
-How Mark-and-Sweep Works
-
-    Mark Phase: Recursively marks all reachable objects starting from root references.
-    Sweep Phase: Frees memory occupied by unmarked (unreachable) objects.
-
-Visual Representation
-
-Yes
-No
-Start
-Is there a reference?
-Keep Object
-Mark as Unreachable
-Reclaim Memory
-End
-
-Memory Management Best Practices
-
-    Use manual memory management only when necessary, such as interfacing with C or optimizing critical code paths.
-    Prefer Nim’s GC for general-purpose code to reduce manual errors.
-    Be cautious of cycles in data structures, as the GC does not collect cyclic references automatically.
-
-References and Further Reading
-
-    Nim Manual: Memory Management
-    Wikipedia: Memory Management
-
-Related Topics
-
-    Manual Memory Management
-    Garbage Collection
-
-Understanding Reference Counting
-
-Nim supports reference counting to manage shared ownership of objects. While it provides immediate deallocation when references drop to zero, it cannot handle cyclic references, which can cause memory leaks if not broken explicitly.
-How Reference Counting Works
-
-Each object tracks the number of references to it. Incrementing and decrementing this count happens automatically when references are assigned or go out of scope.
-
-
-type
-  MyData = ref object
-    value: int
-
-var
-  obj1 = MyData(value: 10)
-  obj2 = obj1  # Reference count for obj1 increases
-# When obj2 goes out of scope, the count decreases
-
-Nim
-Memory Safety with Ownership
-
-Nim’s ownership model enforces clear ownership semantics, preventing dangling pointers and double frees. Ownership transfer is explicit, which aids in reasoning about memory lifetimes but requires discipline in complex data flows.
-Ownership Example
-
-
-type
-  OwnerData = object
-    value: int
-
-proc createOwner(): OwnerData =
-  result.value = 20  # Owner created
-
-var owner = createOwner()  # owner owns the data
-# Memory is cleaned up when owner goes out of scope
-
-Nim
-Performance Considerations
-
-Both reference counting and GC introduce overhead. Reference counting incurs cost on every assignment, and GC can cause unpredictable pauses. To mitigate:
-
-    Minimize allocations inside tight loops.
-    Use alloc for bulk allocations to reduce fragmentation.
-    Implement object pooling where appropriate.
-
-Visualizing Memory Management
-
-Create Reference
-Destroy Reference
-Count = 0
-Object Creation
-Reference Count = 1
-Increment Count
-Decrement Count
-Deallocate Memory
-
-Exclusions
-
-This overview excludes low-level details of Nim's arena allocator and cycle detection mechanisms, as they are specialized topics beyond typical application development scope.
-
-
-
-Memory Management in Nim: Understanding Garbage Collection
-
-Memory management directly affects application performance and stability. Nim relies on garbage collection (GC) to automate memory reclamation, but this convenience comes with tradeoffs such as unpredictable pauses and potential memory retention issues.
-Note: This overview excludes manual memory management techniques like reference counting or arena allocators, which are outside the scope here due to their complexity and different use cases.
-What is Garbage Collection?
-
-Garbage collection automatically frees memory occupied by objects no longer reachable from program roots, reducing manual errors but requiring careful design to avoid unintended retention.
-How Garbage Collection Works
-
-The collector identifies unreachable objects through phases:
-
-    Allocation: Memory is reserved when objects are created.
-    Marking: Live objects reachable from roots are marked.
-    Cleanup: Unmarked objects are reclaimed.
-
-Garbage Collection Lifecycle
-Allocation
-Marking
-Cleanup
-Memory Reclaimed
-Nim's Garbage Collection Strategy
-
-Nim uses a tracing garbage collector that periodically scans from roots (globals, stacks) to detect live objects. While this reduces programmer overhead, it can cause latency spikes in memory-heavy or real-time systems.
-Enabling and Configuring Garbage Collection
-
-Garbage collection behavior is set via the --gc: compiler flag. For instance:
-
-nim c --gc:boehm my_program.nim
-
-Nim
-
-This selects the Boehm-Demers-Weiser GC, a conservative collector better suited for multithreaded environments but with less predictable timing.
-Choosing a Garbage Collector
-
-Options include:
-
-    Mark and Sweep: Nim’s default; simple but can introduce stop-the-world pauses.
-    Boehm GC: Conservative, compatible with multithreading, but may retain some garbage due to conservative pointer identification.
-    Custom GC: Allows tailored strategies but requires deep expertise and careful integration.
-
-Garbage Collection in Action
-
-
-type
-    Node = object
-        value: int
-        next: ptr Node
-
-proc createList(n: int): ptr Node =
-    var head: ptr Node = nil
-    for i in countdown(n, 1):
-        let newNode = new(Node)
-        newNode[].value = i
-        newNode[].next = head
-        head = newNode
-    return head
-
-proc freeList(head: ptr Node) =
-    var current = head
-    while current != nil:
-        let nextNode = current[].next
-        dispose(current)
-        current = nextNode
-
-Nim
-
-This example shows manual disposal of linked nodes, which is necessary when bypassing GC or managing non-GCed memory. Note that misuse of dispose can cause dangling pointers or double frees if not carefully controlled.
-Common Garbage Collection Issues
-
-    Memory Leaks: Retaining references unintentionally (e.g., in global variables or caches) prevents collection.
-    Fragmentation: Repeated allocations and deallocations can fragment the heap, degrading performance over time.
-    Latency Spikes: GC pauses can disrupt real-time or latency-sensitive applications.
-
-Example of a Memory Leak
-
-
-var leakedList: ptr Node
-
-proc createLeakyList(n: int) =
-    for i in 1..n:
-        let newNode = new(Node)
-        newNode[].value = i
-        newNode[].next = leakedList
-        leakedList = newNode
-
-Nim
-
-Here, leakedList holds references to all nodes, preventing their collection. This pattern is common when global or long-lived variables accumulate references without release.
-Optimizing Memory Usage with Garbage Collection
-
-    Avoid Circular References: Nim's default GC handles cycles, but custom or manual memory management may require weak references to break cycles.
-    Prefer Value Types: Using stack-allocated or value types reduces GC pressure and fragmentation.
-    Profile Memory Usage: Employ profiling tools to identify unexpected retention or allocation hotspots.
-
-Memory Profiling in Nim
-
-Nim lacks a built-in comprehensive memory profiler, so integrating external tools or runtime instrumentation is common:
-
-
-import strutils, os
-
-proc profileMemory(): void =
-    # Placeholder: integrate with OS or runtime profiling tools
-    echo "Profiling memory usage..."
-    
-profileMemory()
-
-Nim
-
-Effective profiling requires platform-specific tools or third-party libraries due to Nim’s minimal runtime.
-Advanced Garbage Collection Techniques
-
-    Generational GC: Separates objects by age to reduce scanning frequency for long-lived objects, improving throughput but increasing implementation complexity.
-    Real-time GC: Concurrent or incremental collectors reduce pause times but require synchronization and can complicate program logic.
-
-Generational Garbage Collection Example
-Promotion
-Collection
-Young Generation
-Old Generation
-Survivor Space
-Reclaimed Memory
-Custom Garbage Collector Implementation
-
-
-proc customGC(): void =
-    # Implement a custom garbage collection strategy here
-    echo "Running custom garbage collector..."
-
-Nim
-
-Custom collectors can optimize for specific workloads but require careful handling of object lifetimes and integration with Nim’s runtime.
